@@ -1,0 +1,5 @@
+Characters 86-87:
+  in wwhile(gs, b);;
+                ^
+Error: This expression has type bool but an expression was expected of type
+         int

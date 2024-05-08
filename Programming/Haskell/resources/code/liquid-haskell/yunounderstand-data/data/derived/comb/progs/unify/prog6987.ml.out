@@ -1,0 +1,6 @@
+Characters 131-139:
+  in wwhile(isFPoint, b);;
+            ^^^^^^^^
+Error: This expression has type int -> bool
+       but an expression was expected of type int -> int * bool
+       Type bool is not compatible with type int * bool 

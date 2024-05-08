@@ -1,0 +1,5 @@
+Characters 80-86:
+  (let func output = ((f output),(f output) = b) in func b) 
+                                                    ^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool

@@ -1,0 +1,5 @@
+Characters 321-323:
+  union f1 (del x e2)
+                  ^^
+Error: This expression has type expr but an expression was expected of type
+         string set

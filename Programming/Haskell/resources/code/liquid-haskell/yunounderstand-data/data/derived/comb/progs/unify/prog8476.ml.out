@@ -1,0 +1,5 @@
+Characters 62-67:
+  if b=b' then false
+               ^^^^^
+Error: This expression has type bool but an expression was expected of type
+         'a -> 'a * bool

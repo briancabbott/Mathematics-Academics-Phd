@@ -1,0 +1,6 @@
+Characters 92-94:
+  in wwhile(gs, b);;
+            ^^
+Error: This expression has type 'a -> int
+       but an expression was expected of type 'a -> 'a * bool
+       Type int is not compatible with type 'a * bool 

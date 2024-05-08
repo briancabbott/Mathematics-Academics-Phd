@@ -1,0 +1,5 @@
+Characters 178-179:
+  in wwhile(gs, b);;
+                ^
+Error: This expression has type (int -> int) * bool
+       but an expression was expected of type int -> int

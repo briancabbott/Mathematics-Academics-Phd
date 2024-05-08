@@ -1,0 +1,35 @@
+name:                prover
+version:             0.1.0.0
+synopsis:            Automatic Prover of Logical Predicates
+license:             BSD3
+license-file:        LICENSE
+author:              Niki Vazou
+maintainer:          nvazou@cs.ucsd.edu
+copyright:           2015 Niki Vazou, UC San Diego
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  build-depends:       base >=4.8 && <5
+  hs-source-dirs:      src
+  default-language:    Haskell98
+  build-depends:       liquid-fixpoint >= 0.5,
+                       parsec, unordered-containers, hashable
+  exposed-modules:     Prover.Constants,
+                       Prover.Misc,
+                       Prover.Parser,
+                       Prover.Pretty,
+                       Prover.SMTInterface,
+                       Prover.Solve,
+                       Prover.Types,
+                       Prover.Names
+
+executable prover
+  default-language:    Haskell98
+  build-depends:       prover
+                     , liquid-fixpoint >= 0.5
+                     , base >=4.8, parsec
+                     , unordered-containers, hashable
+
+  main-is: src/Prover.hs
+  ghc-options: -Werror -W

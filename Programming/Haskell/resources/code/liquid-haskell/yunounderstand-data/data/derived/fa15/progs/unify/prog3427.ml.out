@@ -1,0 +1,5 @@
+Characters 118-119:
+  | h::t ->  mulByDigit i t @ [x * y];;
+                               ^
+Error: This expression has type 'a -> int list -> string list
+       but an expression was expected of type int

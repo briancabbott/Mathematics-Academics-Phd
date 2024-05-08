@@ -1,0 +1,5 @@
+Characters 145-146:
+  |h::t -> if List.length t > 1 then remainder i h :: mulByDigit i t else [x * y];;
+                                                                           ^
+Error: This expression has type 'a -> int list -> string list
+       but an expression was expected of type int

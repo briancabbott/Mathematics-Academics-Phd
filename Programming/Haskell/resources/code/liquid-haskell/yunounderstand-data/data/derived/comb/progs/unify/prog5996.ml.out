@@ -1,0 +1,5 @@
+Characters 70-77:
+  let fixpoint (f,b) = let newFunc = (f b, b = f b = false ) in wwhile (newFunc, b);;
+                                                                        ^^^^^^^
+Error: This expression has type 'a * bool
+       but an expression was expected of type 'b -> 'b * bool
