@@ -1,0 +1,19 @@
+#!/bin/bash -e
+git clean -dXf
+git pull
+autoreconf -i
+PATH=$HOME/.ghcup/bin:$PATH
+ghcup upgrade
+ghcup install cabal latest
+ghcup set cabal latest
+for c in 9.4.8 9.6.4 9.8.2
+do
+ghcup install ghc $c
+ghcup set ghc $c
+cabal update
+cabal v1-install --only-dependencies --enable-tests
+cabal v1-configure --enable-tests
+cabal v1-test
+cabal v1-haddock
+done
+echo OK
