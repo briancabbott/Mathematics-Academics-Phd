@@ -1,0 +1,4 @@
+qualif PPage(v:int) : v < 1000
+qualif VPage(v:int) : v < 2000
+
+qualif SIZE(v:ptr) : BLOCK_END([v]) = BLOCK_BEGIN([v]) + 4000

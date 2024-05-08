@@ -1,0 +1,1 @@
+qualif LB(v:int)	: v < 10

@@ -1,0 +1,5 @@
+. TEST SSA Joins of x (qargid definition)
+
+. Add error slicing.
+    Error: Root + lines in slice
+    Slice: Hide all lines EXCEPT slice

@@ -1,0 +1,2 @@
+qualif NODEID(v:ptr) : (v != 0) => ((4*(DEREF([v]) : int)) = ((VVADDR - BLOCK_BEGIN([VVADDR])) : int))
+qualif NotListPtrA(v: ptr) : ((DEREF([BLOCK_BEGIN([v])]) : int) = ~i)

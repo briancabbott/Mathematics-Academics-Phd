@@ -1,0 +1,3 @@
+qualif StructSz(v:ptr) : BLOCK_BEGIN([v]) + 32 = BLOCK_END([v])
+qualif Effect(v: ptr)  : (v - BLOCK_BEGIN([v])) = 4 * @i
+qualif NoAccum(v: ptr) : ACCUMULATE != 1

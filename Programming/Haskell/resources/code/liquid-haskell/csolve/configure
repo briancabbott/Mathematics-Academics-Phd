@@ -1,0 +1,53 @@
+#!/bin/bash
+
+ROOTHOME=`pwd`
+
+cat - > config.make <<EOF
+#######
+ROOTHOME=$ROOTHOME
+#######
+EXTHOME=$ROOTHOME/external
+OCAMLGRAPHHOME=$ROOTHOME/external/ocamlgraph
+Z3HOME=$ROOTHOME/external/z3
+CILHOME=$ROOTHOME/external/cil/obj/x86_LINUX
+SRCHOME=$ROOTHOME/src
+EOF
+
+if [ -d external/gnu-coreutils ]; then
+  cd external/gnu-coreutils
+  ./csolve.configure
+  cd $ROOTHOME
+fi
+
+OCAMLLIB=`ocamlc -v | tail -1 | cut -d : -f 2 | tr -d " "`
+
+cat - > build.sh <<EOF
+#!`which bash`
+
+set -e
+
+if [[ \`uname -m\` = 'x86_64' ]]
+then
+  echo Found 64-bit kernel. Moving z3 into place.
+  cp external/z3/lib/libz3-so-64b external/z3/lib/libz3.so
+  cp external/z3/lib/libz3-a-64b external/z3/lib/libz3.a
+else
+  echo Assuming 32-bit kernel. Moving z3 into place.
+  cp external/z3/lib/libz3-so-32b external/z3/lib/libz3.so
+  cp external/z3/lib/libz3-a-32b external/z3/lib/libz3.a
+fi
+
+########################## Exit if in an incompatible build environment
+if [[ \`uname\` != 'Linux' ]]
+then
+  echo Error: Found a non-linux environment.
+  exit 1
+fi
+##########################
+cd external/cil/; ./configure; make; make check; cd ../../
+cd external/ocamlgraph/; ./configure; make; cd ../../
+cd external/z3/ocaml; ./build-lib.sh; cd ../../../
+cd src; make; cd ../
+EOF
+
+chmod a+x build.sh

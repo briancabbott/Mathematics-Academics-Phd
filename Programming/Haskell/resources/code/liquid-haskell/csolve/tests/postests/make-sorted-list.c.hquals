@@ -1,0 +1,5 @@
+qualif NXT(v: ptr)  : (v != 0) => (~A < (DEREF([v]): int))
+
+// This works to specify hd in terms of last...
+// But the the symmetric thing doesn't work to specify last in terms of hd - why?
+qualif CHD(v: ptr)  : (v != 0) => ((DEREF([v]): int) > (DEREF([@last]): int))

@@ -1,0 +1,7 @@
+qualif GtLb(v:ptr)  : BLOCK_BEGIN([v]) < v
+qualif Pad(v:ptr)   : (v + _)      < BLOCK_END([v])
+
+qualif Pad4m(v:ptr) : (v + (4 * _)) < (BLOCK_END([v]) - @m)
+//WORKS BUT SLOWER
+//qualif Pad4m(v:ptr) : (v + (4 * _)) < (BLOCK_END([v]) - _)
+

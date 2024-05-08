@@ -1,0 +1,2 @@
+qualif NXT(v: ptr)  : (v != 0) => (~A < (DEREF([v]): int))
+qualif HDL(v: ptr)  : (v != 0) => ((DEREF([v]): int) < ~A)

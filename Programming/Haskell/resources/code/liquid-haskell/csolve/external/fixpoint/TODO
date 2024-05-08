@@ -1,0 +1,28 @@
+Extensible Theories (csolve/external/fixpoint)
+==============================================
+
+[OK] theories.mli 
+
+[OK] external/fixpoint/tests/sets.fq
+   
+3. tpZ3.ml 
+
+   - update type t 
+        itycm : Map tycon    Th.sortDef
+        isymm : Map Symbol.t Th.symDef
+  thy_tym
+  thy_sym
+   call get_theories to encode things into Z3)
+
+   - OK: add fun-sort bindings to sortchecking environment
+   - HACK: z3App/Thy  -- lookup table?
+   - HACK: z3Type/Thy -- lookup table?
+    OK!
+
+    
+
+4. theories.ml
+
+    > actual wrapper for SET API (and other things if you wish)
+
+

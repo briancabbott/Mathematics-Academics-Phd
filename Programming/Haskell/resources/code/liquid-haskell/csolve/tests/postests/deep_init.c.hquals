@@ -1,0 +1,2 @@
+qualif isOne(v: int)      : v = 1
+qualif isTwo(v: int)      : v = 2

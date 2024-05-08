@@ -1,0 +1,2 @@
+qualif LT36(v:int)     : v < 36
+qualif BRINLAT(v:ptr)  : (@num > 0) => (0 < v)

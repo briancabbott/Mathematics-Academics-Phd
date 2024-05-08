@@ -1,0 +1,8 @@
+resolver: lts-21.13
+compiler: ghc-9.4.7
+allow-newer: true
+packages:
+- '.'
+extra-deps:
+- dequeue-0.1.12
+- json-0.10
