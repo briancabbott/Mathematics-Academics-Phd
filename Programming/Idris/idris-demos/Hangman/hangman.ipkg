@@ -1,0 +1,8 @@
+package hangman
+
+modules = VectMissing, Hangman 
+opts = "-p effects" 
+
+executable = hangman
+main = Hangman
+

@@ -1,0 +1,17 @@
+(library
+ (name clib)
+ (synopsis "Coq's Utility Library [general purpose]")
+ (public_name coq-core.clib)
+ (wrapped false)
+ (modules_without_implementation cSig)
+ (modules :standard \ unicodetable_gen)
+ (libraries str unix threads))
+
+(executable
+ (name unicodetable_gen)
+ (modules unicodetable_gen))
+
+(rule
+ (targets unicodetable.ml)
+ (deps (:gen ./unicodetable_gen.exe))
+ (action (run %{gen} %{targets})))

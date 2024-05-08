@@ -1,0 +1,144 @@
+module Idris.Syntax.TTC
+
+import public Core.Binary
+import public Core.TTC
+
+import TTImp.TTImp
+import TTImp.TTImp.TTC
+
+import Idris.Syntax
+
+import Libraries.Data.ANameMap
+import Libraries.Data.NameMap
+import Libraries.Data.SortedMap
+import Libraries.Data.StringMap
+
+%default covering
+
+
+export
+TTC Method where
+  toBuf b (MkMethod nm c treq ty)
+      = do toBuf b nm
+           toBuf b c
+           toBuf b treq
+           toBuf b ty
+
+  fromBuf b
+      = do nm <- fromBuf b
+           c <- fromBuf b
+           treq <- fromBuf b
+           ty <- fromBuf b
+           pure (MkMethod nm c treq ty)
+
+
+export
+TTC IFaceInfo where
+  toBuf b (MkIFaceInfo ic impps ps cs ms ds)
+      = do toBuf b ic
+           toBuf b impps
+           toBuf b ps
+           toBuf b cs
+           toBuf b ms
+           toBuf b ds
+
+  fromBuf b
+      = do ic <- fromBuf b
+           impps <- fromBuf b
+           ps <- fromBuf b
+           cs <- fromBuf b
+           ms <- fromBuf b
+           ds <- fromBuf b
+           pure (MkIFaceInfo ic impps ps cs ms ds)
+
+export
+TTC Fixity where
+  toBuf b InfixL = tag 0
+  toBuf b InfixR = tag 1
+  toBuf b Infix = tag 2
+  toBuf b Prefix = tag 3
+
+  fromBuf b
+      = case !getTag of
+             0 => pure InfixL
+             1 => pure InfixR
+             2 => pure Infix
+             3 => pure Prefix
+             _ => corrupt "Fixity"
+
+export
+TTC Import where
+  toBuf b (MkImport loc reexport path nameAs)
+    = do toBuf b loc
+         toBuf b reexport
+         toBuf b path
+         toBuf b nameAs
+
+  fromBuf b
+    = do loc <- fromBuf b
+         reexport <- fromBuf b
+         path <- fromBuf b
+         nameAs <- fromBuf b
+         pure (MkImport loc reexport path nameAs)
+
+export
+TTC BindingModifier where
+  toBuf b NotBinding = tag 0
+  toBuf b Typebind = tag 1
+  toBuf b Autobind = tag 2
+  fromBuf b
+      = case !getTag of
+             0 => pure NotBinding
+             1 => pure Typebind
+             2 => pure Autobind
+             _ => corrupt "binding"
+
+export
+TTC FixityInfo where
+  toBuf b fx
+      = do toBuf b fx.fc
+           toBuf b fx.vis
+           toBuf b fx.bindingInfo
+           toBuf b fx.fix
+           toBuf b fx.precedence
+  fromBuf b
+      = do fc <- fromBuf b
+           vis <- fromBuf b
+           binding <- fromBuf b
+           fix <- fromBuf b
+           prec <- fromBuf b
+           pure $ MkFixityInfo fc vis binding fix prec
+
+
+export
+TTC SyntaxInfo where
+  toBuf b syn
+      = do toBuf b (ANameMap.toList (fixities syn))
+           toBuf b (filter (\n => elemBy (==) (fst n) (saveMod syn))
+                           (SortedMap.toList $ modDocstrings syn))
+           toBuf b (filter (\n => elemBy (==) (fst n) (saveMod syn))
+                           (SortedMap.toList $ modDocexports syn))
+           toBuf b (filter (\n => fst n `elem` saveIFaces syn)
+                           (ANameMap.toList (ifaces syn)))
+           toBuf b (filter (\n => isJust (lookup (fst n) (saveDocstrings syn)))
+                           (ANameMap.toList (defDocstrings syn)))
+           toBuf b (bracketholes syn)
+           toBuf b (startExpr syn)
+           toBuf b (holeNames syn)
+
+  fromBuf b
+      = do fix <- fromBuf b
+           moddstr <- fromBuf b
+           modexpts <- fromBuf b
+           ifs <- fromBuf b
+           defdstrs <- fromBuf b
+           bhs <- fromBuf b
+           start <- fromBuf b
+           hnames <- fromBuf b
+           pure $ MkSyntax (fromList fix)
+                   [] (fromList moddstr) (fromList modexpts)
+                   [] (fromList ifs)
+                   empty (fromList defdstrs)
+                   bhs
+                   [] start
+                   hnames

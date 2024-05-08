@@ -1,0 +1,4 @@
+. ../../testutils.sh
+
+idris2 --cg racket Futures.idr -p contrib --exec constant
+idris2 --cg racket Futures.idr -p contrib --exec map

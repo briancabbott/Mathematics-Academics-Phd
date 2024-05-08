@@ -1,0 +1,50 @@
+---
+title: Software Foundations
+subtitle: Idris Translation
+author:
+- Benjamin C. Pierce
+- Arthur Azevedo de Amorim
+- Chris Casinghino
+- Marco Gaboardi
+- Michael Greenberg
+- Cătălin Hriţcu
+- Vilhelm Sjöberg
+- Brent Yorgey
+date: Summer 2016
+thanks: >
+  with Loris D'Antoni, Andrew W. Appel, Arthur Chargueraud, Anthony Cowley,
+  Jeffrey Foster, Dmitri Garbuzov, Michael Hicks, Ranjit Jhala, Greg Morrisett,
+  Jennifer Paykin, Mukund Raghothaman, Chung-chieh Shan, Leonid Spesivtsev,
+  Andrew Tolmach, Stephanie Weirich and Steve Zdancewic.\newline\newline
+  Idris translation by Eric Bailey, Alex Gryzlov and Erlend Hamberg.
+toc: true
+documentclass: amsbook
+classoption: twoside
+papersize: b5
+geometry: margin=1in
+header-includes:
+- \setmonofont{Iosevka}
+-
+- \usepackage[utf8]{inputenc}
+- \usepackage{newunicodechar}
+- \newunicodechar{∀}{$\forall$}
+
+-
+- \usepackage{minted}
+- \usemintedstyle{lovelace}
+- \newmintinline[el]{elisp}{}
+- \newmintinline[idr]{idris}{}
+-
+- \usepackage[xindy]{glossaries}
+- \makeglossaries
+- \input{glossary}
+- \renewcommand*{\glstextformat}[1]{\textsl{#1}}
+-
+- \usepackage{todonotes}
+-
+- \usepackage{ebproof}
+- \usepackage{dirtytalk}
+include-before: \frontmatter
+---
+
+\mainmatter
