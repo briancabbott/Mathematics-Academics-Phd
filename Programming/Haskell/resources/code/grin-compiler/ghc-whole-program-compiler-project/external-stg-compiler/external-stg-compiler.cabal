@@ -1,0 +1,142 @@
+cabal-version:       2.4
+name:                external-stg-compiler
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/grin#readme
+license:             BSD-3-Clause
+license-file:        LICENSE
+author:              Csaba Hruska
+maintainer:          csaba.hruska@gmail.com
+copyright:           2020 Csaba Hruska
+category:            Compiler
+build-type:          Simple
+
+library
+  hs-source-dirs:      lib
+  exposed-modules:
+    Stg.GHC.Backend
+    Stg.GHC.ToStg
+    Stg.DeadFunctionElimination.Analysis
+    Stg.DeadFunctionElimination.Facts
+    Stg.DeadFunctionElimination.StripModule
+
+  build-depends:
+      base
+    , containers
+    , mtl
+    , bytestring
+    , ghc
+    , ghc-paths
+    , ghc-boot
+    , binary
+    , filepath
+    , directory
+    , process
+    , temporary
+    , transformers
+    , external-stg
+    , external-stg-syntax
+    , souffle-haskell
+    , time
+
+  default-language:     Haskell2010
+  cpp-options:          -DEXTERNAL_STG_COMPILER_PACKAGE
+
+  include-dirs:         cbits
+
+  extra-libraries:      gomp
+
+  cxx-sources:          cbits/ext-stg-liveness.cpp
+  cxx-options:          -D__EMBEDDED_SOUFFLE__ -D_OPENMP -std=c++17
+  ld-options:           "-Wl,--undefined=__factory_Sf_ext_stg_liveness_instance"
+
+executable gen-exe
+  hs-source-dirs:      app
+  main-is:             gen-exe.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , binary
+                     , ghc
+                     , external-stg
+                     , external-stg-compiler
+                     , split
+                     , async-pool
+                     , process
+                     , directory
+                     , filepath
+                     , filemanip
+                     , containers
+                     , bytestring
+
+  default-language:    Haskell2010
+
+executable gen-obj
+  hs-source-dirs:      app
+  main-is:             gen-obj.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , ghc
+                     , ghc-paths
+                     , external-stg
+                     , external-stg-compiler
+  default-language:    Haskell2010
+
+executable gen-exe2
+  hs-source-dirs:      app
+  main-is:             gen-exe2.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , ghc
+                     , external-stg
+                     , external-stg-compiler
+                     , split
+                     , async-pool
+                     , process
+                     , directory
+                     , filepath
+                     , bytestring
+
+  default-language:    Haskell2010
+
+executable gen-obj2
+  hs-source-dirs:      app
+  main-is:             gen-obj2.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , ghc
+                     , ghc-paths
+                     , directory
+                     , filepath
+                     , bytestring
+                     , external-stg
+                     , external-stg-compiler
+  default-language:    Haskell2010
+
+executable show-ghc-stg
+  hs-source-dirs:      app
+  main-is:             show-ghc-stg.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , ghc
+                     , ghc-paths
+                     , external-stg
+                     , external-stg-compiler
+                     , filepath
+  default-language:    Haskell2010
+
+executable dce-fullpak
+  hs-source-dirs:      app
+  main-is:             dce-fullpak.hs
+  ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  build-depends:       base
+                     , binary
+                     , external-stg
+                     , external-stg-compiler
+                     , async-pool
+                     , directory
+                     , filepath
+                     , bytestring
+                     , zip
+
+  default-language:    Haskell2010
