@@ -1,0 +1,61 @@
+stg interpreter state:
+  stack
+    unboxed tuples
+    stack frame = local binders
+    let no escape??
+  heap
+    stg heap objects?
+    data constructor
+    closure object
+    app node
+
+NOTE:
+  only the heap objects are tagged at run-time, atom type observation is not allowed during evaluation! ; use the reptype instead.
+
+READ:
+  - Apply.cmm
+  - StgStdThunks.cmm
+
+Q: only case forces heap objects?? what about apply? it must progress PAPS and thunks
+A: App can force also
+
+Q: what is the semantic of StgApp?
+A: (zero arg = StgVar)
+   forces saturated closures, stores args otherwise
+
+Q: are all thunks created at compile time, can a thunk be created at runtime?
+A: StgLet is the only source of thunks
+
+Q: can any heap object turn into a thunk?
+A: no, apply always forces if the closure gets saturated
+
+
+TODO:
+  - refresh unique values to generate globally unique ones
+  - compile dynlib version of package .cbits
+
+IDEA:
+  Implementation method:
+    first:  pure and simple haskell
+    then:   gradually optimize if necessary
+
+ffi libs:
+  https://hackage.haskell.org/package/unix-2.7.2.2/docs/System-Posix-DynamicLinker.html
+  https://hackage.haskell.org/package/rtld
+  https://www.stackage.org/lts-16.16/package/libffi-0.1
+  https://wiki.haskell.org/Library/libffi
+
+Q: what is coercionToken# ?
+A: it has VoidRep, it is compiled from coercions. disappears at runtime,
+   needed to model arity correctly and prevent early closure saturation
+
+use cases:
+  use the interpreter as:
+    debugger
+    heap visualizer in the browser ; send the state as a json
+    concolic execution ; concrete and abstract checking strictness or liveness or lifetime, or validate the analysis
+    check new memory management methods
+    create ghc typed runtime system model ; synthetize a native implementation in a strictly typed system such as ATS
+    interpreter as jit compiler ; either typed x86 jit EDSL or luajit or javascript jit or llvmjit
+    on the fly origin tracking ; stop program and check everything on the source code
+    maybe the native backend should be automatically calculated from interpreter and not written from scratch at all??
