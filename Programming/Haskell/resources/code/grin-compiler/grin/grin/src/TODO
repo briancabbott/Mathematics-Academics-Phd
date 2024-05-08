@@ -1,0 +1,80 @@
+done - ST Monad based GRIN reducer
+done - add frontend language (LC example from unbound)
+- implement closure conversion for the frontend language
+- change GRIN AST and parser to use unbound
+- implement lazy lc -> grin transformation
+  - generate eval
+  - generate apply
+
+- better representation of grin
+  HINT: change the AST to make it easy to grasp the semantics; e.g. typed reified DSL operations
+  - reified statement chaining (binding)
+  - statements
+  - values
+  - patterns
+
+WHY:
+  - practice unbound
+  - learn grin
+  - practice writing transformations
+  - estimate the raw performance of grin
+
+EXPERIMENTAL:
+  - try to JIT GRIN
+  - how would partial evaluation look like with GRIN
+
+THOUGHTS:
+  Is GRIN optimization and transformation a computation?
+    IDEA: What if:
+      - the non optimizing compiler is just a one pass (non recursive) map function to the target language i.e. machine code
+      - the optimization (source to source) passes are computations in an earlier stage at a multistage setting
+    If so, is the optimizing compiler just a library in a multi stage language?
+    And the only part that needs to be provided is just the simple non optimizing mapper to the target language.
+  Can that computation be optimized? Or is it just an earlier stage of the multistage compilation pipeline?
+
+  QUESTIONS:
+    Is it possibe to save the reduction results of the earlier stages?
+    Is the type inference also a stage?
+
+  Model how these are related
+    program execution is evaluation
+    program optimization is evaluation
+    type inference/check is evaluation
+
+  GRIN optimisations vs supercompilation
+    GRIN does calculation on tags that comes from the frontend language's type system therefore it terminates for sure.
+    The tag related calculations are much more limited than computations on arbitrary values.
+    Supercompilation does general computation without binding time annotations.
+
+micro TODO:
+  - compile LC_SmallStep
+  - closure conversion
+  - compile to grin
+
+ST reduce optimization related:
+  read: https://ro-che.info/articles/2017-08-06-manage-allocated-memory-haskell
+
+JIT TODO:
+  NOTE: use x86-64bit package; machine code EDSL
+  - register allocator monad
+  - grin AST serialization and read back (machine code layout mapping)
+  - generate garbage collector
+
+THOUGHTS:
+  There is no difference between the program and the program input in a partial evaluation setting. It's just information processing.
+
+  Inline or not to inline?
+    - do both, measure the differences
+    - obviously it will explode in complexity, but it is possible to do a monte carlo simulation
+    - or use machine learning where the local AST structure is the input and the performance improvement is the oputput;
+      the size of the local AST can be increased until it reaches the whole AST
+
+dynamic vs static typing:
+  what if the difference between the two is the type checking binding time?
+  i.e. whether the types are recuced in compile time or run time
+  maybe it is possible to create a system in a multi-stage programming environment where
+    both a static and a dynamic typed language could be derived from a single multi-stage implementation
+
+read about Gradual Typing
+
+
