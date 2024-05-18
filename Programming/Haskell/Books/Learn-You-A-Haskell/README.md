@@ -4,6 +4,7 @@ Notes:
 
 
 # Lists
+
 ## List Concatenation Operator:
 
     ++
@@ -14,11 +15,27 @@ Notes:
     l1 ++ l2
 
 
-## List Cons Operator:
+## List Cons Operator:MathSAT 5
 
     : 
 
-    item : list -> list (prepended with item)
+    item : list -> list (prependetching
+
+
+
+### As-Patterns
+
+### Gaurds
+
+### Where Clauses
+
+
+
+
+## Let Bindings
+
+## Case Expressions
+d with item)
 
 
 ## List Index Operator
@@ -26,23 +43,23 @@ Notes:
     !!
 
 ## Other List Operators
-head
-tail
-last
-init
-length
-null
-reverse
-take
-drop
-maximum
-minimum
-sum
-product
-elem
+    head
+    tail
+    last
+    init
+    length
+    null
+    reverse
+    take
+    drop
+    maximum
+    minimum
+    sum
+    product
+    elem
+
 
 ## List Range Operator
-
     ..
 
     step operator
@@ -54,6 +71,7 @@ elem
     cycle
     repeat
     replicate
+
 
 ## List comprehensions
     - Similiar to set comprehensions
@@ -115,11 +133,18 @@ elem
     Class Constraint in type decl
 
 
+
+
+
 # Functions
 
 ## Recursive Functions
 
+
+
 ## Pattern Matching
+
+
 
 ### As-Patterns
 
@@ -128,9 +153,18 @@ elem
 ### Where Clauses
 
 
+
+
 ## Let Bindings
 
 ## Case Expressions
 
 
+
+
+# Higher Order Functions
+
+## Curried Functions
+
+Partial Applied Functions
 

@@ -1,0 +1,275 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Mathematical prelude discussion - HaskellWiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"aca80fb58bdf12d7a0808492","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Mathematical_prelude_discussion","wgTitle":"Mathematical prelude discussion","wgCurRevisionId":63550,"wgRevisionId":63550,"wgArticleId":2360,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Mathematics"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Mathematical_prelude_discussion","wgRelevantArticleId":2360,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],
+"wgCollapsibleVectorEnabledModules":{"collapsiblenav":!0,"experiments":!0}};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.collapsiblevector.collapsibleNav"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=mediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.5"/>
+<link rel="shortcut icon" href="/wikistatic/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="HaskellWiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.haskell.org/api.php?action=rsd"/>
+<link rel="license" href="/HaskellWiki:Copyrights"/>
+<link rel="alternate" type="application/atom+xml" title="HaskellWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Mathematical_prelude_discussion rootpage-Mathematical_prelude_discussion skin-vector action-view skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="en">Mathematical prelude discussion</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">From HaskellWiki</div>
+		<div id="contentSub"></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Purpose"><span class="tocnumber">1</span> <span class="toctext">Purpose</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Todo"><span class="tocnumber">2</span> <span class="toctext">Todo</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="#Libraries_and_proposals"><span class="tocnumber">3</span> <span class="toctext">Libraries and proposals</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Numeric_Prelude"><span class="tocnumber">3.1</span> <span class="toctext">Numeric Prelude</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Basic_Algebra_Library_.28BAL.29"><span class="tocnumber">3.2</span> <span class="toctext">Basic Algebra Library (BAL)</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Haskell_Prime.27"><span class="tocnumber">3.3</span> <span class="toctext">Haskell Prime'</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#See_Also"><span class="tocnumber">3.4</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8"><a href="#Discussion"><span class="tocnumber">4</span> <span class="toctext">Discussion</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Purpose">Purpose</span></h2>
+<p>There have been many ideas for improving the prelude's support for mathematics.  Including the addition of algebraic classes.  But the discussion is spread over years of list archives and a half dozen websites.  And the discussion has never gelled.
+</p><p>This page is intended to collect links to past discussion, and to provide a focal point for advancing the discussion.
+</p>
+<h2><span class="mw-headline" id="Todo">Todo</span></h2>
+<ul><li>Flesh out list of proposals.  First from <a href="/Libraries_and_tools/Mathematics" class="mw-redirect" title="Libraries and tools/Mathematics">Libraries_and_tools/Mathematics</a>.</li>
+<li>Add links to discussions in list archive, and elsewhere.</li></ul>
+<h2><span class="mw-headline" id="Libraries_and_proposals">Libraries and proposals</span></h2>
+<h3><span class="mw-headline" id="Numeric_Prelude"><a href="/Numeric_Prelude" title="Numeric Prelude">Numeric Prelude</a></span></h3>
+<p>Working set of common type classes and instances.
+</p>
+<h3><span id="Basic_Algebra_Library_(BAL)"></span><span class="mw-headline" id="Basic_Algebra_Library_.28BAL.29">Basic Algebra Library (BAL)</span></h3>
+<dl><dd>Is not in community report 2006-06.</dd>
+<dd><a rel="nofollow" class="external text" href="http://www.botik.ru/pub/local/Mechveliani/basAlgPropos/0.04/announce.txt">0.04/announce.txt (2006-02)</a></dd>
+<dd><a rel="nofollow" class="external text" href="http://www.botik.ru/pub/local/Mechveliani/basAlgPropos/">www.botik.ru/pub/local/Mechveliani/basAlgPropos/</a></dd>
+<dd>Formerly refered to as "basic algebra proposal".</dd></dl>
+<p>Categorical Approach to representing mathematical structures in Haskell:
+<a rel="nofollow" class="external autonumber" href="ftp://ftp.botik.ru/pub/local/Mechveliani/docon/">[1]</a>
+</p>
+<h3><span id="Haskell_Prime'"></span><span class="mw-headline" id="Haskell_Prime.27">Haskell Prime'</span></h3>
+<p><a rel="nofollow" class="external text" href="https://gitlab.haskell.org/haskell/prime/-/wikis/numeric-classes">Numeric classes</a> on the Haskell' wiki
+</p>
+<h3><span class="mw-headline" id="See_Also">See Also</span></h3>
+<ul><li><a href="/Libraries_and_tools/Mathematics" class="mw-redirect" title="Libraries and tools/Mathematics">Libraries_and_tools/Mathematics</a></li></ul>
+<h2><span class="mw-headline" id="Discussion">Discussion</span></h2>
+<p><i>For me that probably starts with the semigroup/group/ring setup, and good</i>
+arbitrary-precision as well as approximate linear algebra support.<i></i>
+</p><p><i>I agree: semigoups like lattices are everywhere.  Then there could be a uniform treatment of linear algebra, polynomial equations, operator algebra, etc.</i>
+</p><p><a rel="nofollow" class="external text" href="http://magma.maths.usyd.edu.au/magma/htmlhelp/MAGMA.htm">MAGMA</a> is an example of a language which embraced mathematical structure. <a href="/index.php?title=User:MitchellNCharity&amp;action=edit&amp;redlink=1" class="new" title="User:MitchellNCharity (page does not exist)">MitchellNCharity</a> 23:16, 14 November 2006 (UTC)
+</p>
+<ul><li>Discussion 2010-04 in Haskell-Cafe on <a rel="nofollow" class="external text" href="http://www.haskell.org/pipermail/haskell-cafe/2010-April/075989.html">Google-Summer-of-Code proposal for richer numerical type classes and supporting algorithms</a></li></ul>
+<ul><li><a rel="nofollow" class="external text" href="http://lambda-the-ultimate.org/node/1655#comment-20299">LtU thread 1655</a></li></ul>
+<ul><li><a rel="nofollow" class="external text" href="http://www.axiom-developer.org/">Aldor/Axiom</a> may be a place to look for a good type class hierarchy</li></ul>
+<ul><li><a rel="nofollow" class="external text" href="http://www.elementsofprogramming.com/eop-concepts.pdf">Elements of Programming</a>, Chapter 5</li></ul>
+<!-- 
+NewPP limit report
+Cached time: 20240508214035
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.003 seconds
+Real time usage: 0.003 seconds
+Preprocessor visited node count: 25/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 -total
+-->
+
+<!-- Saved in parser cache with key wikidb_haskell:pcache:idhash:2360-0!canonical and timestamp 20240508214035 and revision id 63550
+ -->
+</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="https://wiki.haskell.org/index.php?title=Mathematical_prelude_discussion&amp;oldid=63550">https://wiki.haskell.org/index.php?title=Mathematical_prelude_discussion&amp;oldid=63550</a>"</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/Category:Mathematics" title="Category:Mathematics">Mathematics</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>Personal tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=Mathematical+prelude+discussion" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>Namespaces</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected"><a href="/Mathematical_prelude_discussion" title="View the content page [c]" accesskey="c">Page</a></li><li id="ca-talk" class="new"><a href="/index.php?title=Talk:Mathematical_prelude_discussion&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t">Discussion</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Variants</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>Views</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="/Mathematical_prelude_discussion">Read</a></li><li id="ca-viewsource" class="collapsible"><a href="/index.php?title=Mathematical_prelude_discussion&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history" class="collapsible"><a href="/index.php?title=Mathematical_prelude_discussion&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>More</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Search</label>
+	</h3>
+	<form action="/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="Search HaskellWiki" title="Search HaskellWiki [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:Search">
+			<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="Visit the main page" class="mw-wiki-logo" href="/Haskell"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>Navigation</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage"><a href="/Haskell" title="Visit the main page [z]" accesskey="z">Haskell</a></li><li id="n-portal"><a href="/HaskellWiki:Community" title="About the project, what you can do, where to find things">Wiki community</a></li><li id="n-recentchanges"><a href="/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>Tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/Special:WhatLinksHere/Mathematical_prelude_discussion" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/Special:RecentChangesLinked/Mathematical_prelude_discussion" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/index.php?title=Mathematical_prelude_discussion&amp;oldid=63550" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/index.php?title=Mathematical_prelude_discussion&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cite"><a href="/index.php?title=Special:CiteThisPage&amp;page=Mathematical_prelude_discussion&amp;id=63550&amp;wpFormIdentifier=titleform" title="Information on how to cite this page">Cite this page</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> This page was last edited on 10 December 2020, at 06:04.</li>
+		<li id="footer-info-copyright">Recent content is available under <a href="/HaskellWiki:Copyrights" title="HaskellWiki:Copyrights">simple permissive license</a>.</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/HaskellWiki:Privacy_policy" title="HaskellWiki:Privacy policy">Privacy policy</a></li>
+		<li id="footer-places-about"><a href="/HaskellWiki:About" title="HaskellWiki:About">About HaskellWiki</a></li>
+		<li id="footer-places-disclaimer"><a href="/HaskellWiki:General_disclaimer" title="HaskellWiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.003","walltime":"0.003","ppvisitednodes":{"value":25,"limit":1000000},"postexpandincludesize":{"value":0,"limit":2097152},"templateargumentsize":{"value":0,"limit":2097152},"expansiondepth":{"value":2,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%    0.000      1 -total"]},"cachereport":{"timestamp":"20240508214035","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":25});});</script></body></html>

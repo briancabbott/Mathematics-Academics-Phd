@@ -1,0 +1,2342 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<title>Haskell/Category theory - Wikibooks, open books for an open world</title>
+<script>(function(){var className="client-js";var cookie=document.cookie.match(/(?:^|; )enwikibooksmwclientpreferences=([^;]+)/);if(cookie){cookie[1].split('%2C').forEach(function(pref){className=className.replace(new RegExp('(^| )'+pref.replace(/-clientpref-\w+$|[^\w-]+/g,'')+'-clientpref-\\w+( |$)'),'$1'+pref+'$2');});}document.documentElement.className=className;}());RLCONF={"wgBreakFrames":false,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"513d25bd-f46e-4c68-afe3-67ecc40e7aad","wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Haskell/Category_theory","wgTitle":"Haskell/Category theory","wgCurRevisionId":4080311,"wgRevisionId":4080311,"wgArticleId":107278,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],
+"wgCategories":["Book:Haskell"],"wgPageViewLanguage":"en","wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Haskell/Category_theory","wgRelevantArticleId":107278,"wgIsProbablyEditable":true,"wgRelevantPageIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgNoticeProject":"wikibooks","wgCiteReferencePreviews":true,"wgFlaggedRevsParams":{"tags":{"value":{"levels":3}}},"wgStableRevisionId":4080311,"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","pageVariantFallbacks":"en"},"wgMFDisplayWikibaseDescriptions":{"search":true,"watchlist":true,"tagline":false,"nearby":true},"wgWMESchemaEditAttemptStepOversample":false,"wgWMEPageLength":30000,"wgULSCurrentAutonym":"English","wgCentralAuthMobileDomain":false,"wgEditSubmitButtonLabelPublish":true,"wgULSPosition":"interlanguage","wgULSisCompactLinksEnabled":true,"wgVector2022LanguageInHeader":false,
+"wgULSisLanguageSelectorEmpty":false,"wgWikibaseItemId":"Q63285881","wgCheckUserClientHintsHeadersJsApi":["architecture","bitness","brands","fullVersionList","mobile","model","platform","platformVersion"],"wgSiteNoticeId":"2.24"};RLSTATE={"ext.globalCssJs.user.styles":"ready","site.styles":"ready","user.styles":"ready","ext.globalCssJs.user":"ready","user":"ready","user.options":"loading","ext.flaggedRevs.icons":"ready","ext.math.styles":"ready","ext.cite.styles":"ready","skins.vector.styles.legacy":"ready","ext.flaggedRevs.basic":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","codex-search-styles":"ready","ext.uls.interlanguage":"ready","wikibase.client.init":"ready","ext.wikimediaBadges":"ready","ext.dismissableSiteNotice.styles":"ready"};RLPAGEMODULES=["ext.cite.ux-enhancements","site","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.centralNotice.geoIP","ext.centralNotice.startUp","ext.flaggedRevs.advanced","ext.gadget.wikidialog",
+"ext.gadget.commons-file","ext.urlShortener.toolbar","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.echo.centralauth","ext.eventLogging","ext.wikimediaEvents","ext.navigationTiming","ext.uls.compactlinks","ext.uls.interface","ext.checkUser.clientHints","ext.dismissableSiteNotice"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.impl(function(){return["user.options@12s5i",function($,jQuery,require,module){mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+}];});});</script>
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=codex-search-styles%7Cext.cite.styles%7Cext.dismissableSiteNotice.styles%7Cext.flaggedRevs.basic%2Cicons%7Cext.math.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cskins.vector.styles.legacy%7Cwikibase.client.init&amp;only=styles&amp;skin=vector">
+<script async="" src="/w/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="/w/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector">
+<meta name="generator" content="MediaWiki 1.43.0-wmf.4">
+<meta name="referrer" content="origin">
+<meta name="referrer" content="origin-when-cross-origin">
+<meta name="robots" content="max-image-preview:standard">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=1000">
+<meta property="og:title" content="Haskell/Category theory - Wikibooks, open books for an open world">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="//upload.wikimedia.org">
+<link rel="alternate" media="only screen and (max-width: 720px)" href="//en.m.wikibooks.org/wiki/Haskell/Category_theory">
+<link rel="alternate" type="application/x-wiki" title="Edit" href="/w/index.php?title=Haskell/Category_theory&amp;action=edit">
+<link rel="icon" href="/static/favicon/wikibooks.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikibooks (en)">
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikibooks.org/w/api.php?action=rsd">
+<link rel="canonical" href="https://en.wikibooks.org/wiki/Haskell/Category_theory">
+<link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.en">
+<link rel="alternate" type="application/atom+xml" title="Wikibooks Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<link rel="dns-prefetch" href="//login.wikimedia.org">
+</head>
+<body class="skin-vector-legacy mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject mw-editable page-Haskell_Category_theory rootpage-Haskell skin-vector action-view"><div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="notheme"><div id="mw-dismissablenotice-anonplace"></div><script>(function(){var node=document.getElementById("mw-dismissablenotice-anonplace");if(node){node.outerHTML="\u003Cdiv class=\"mw-dismissable-notice\"\u003E\u003Cdiv class=\"mw-dismissable-notice-close\"\u003E[\u003Ca tabindex=\"0\" role=\"button\"\u003Edismiss\u003C/a\u003E]\u003C/div\u003E\u003Cdiv class=\"mw-dismissable-notice-body\"\u003E\u003C!-- CentralNotice --\u003E\u003Cdiv id=\"localNotice\" data-nosnippet=\"\"\u003E\u003Cdiv class=\"anonnotice\" lang=\"en\" dir=\"ltr\"\u003E\u003Cdiv style=\"width: fit-content; padding: 5px; border: 3px solid gray; background-color: #fafafa; text-align: center; margin: auto;\"\u003E\n\u003Cp\u003E\u003Cspan typeof=\"mw:File\"\u003E\u003Ca href=\"/wiki/File:OOjs_UI_icon_robot.svg\" class=\"mw-file-description\"\u003E\u003Cimg src=\"//upload.wikimedia.org/wikipedia/commons/thumb/7/71/OOjs_UI_icon_robot.svg/40px-OOjs_UI_icon_robot.svg.png\" decoding=\"async\" width=\"40\" height=\"40\" class=\"mw-file-element\" srcset=\"//upload.wikimedia.org/wikipedia/commons/thumb/7/71/OOjs_UI_icon_robot.svg/60px-OOjs_UI_icon_robot.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/71/OOjs_UI_icon_robot.svg/80px-OOjs_UI_icon_robot.svg.png 2x\" data-file-width=\"20\" data-file-height=\"20\" /\u003E\u003C/a\u003E\u003C/span\u003E   The Wikibooks community is developing a policy on the use of generative AI. Please review the \u003Ca href=\"/wiki/Wikibooks:Artificial_Intelligence\" title=\"Wikibooks:Artificial Intelligence\"\u003Edraft policy\u003C/a\u003E and provide feedback on \u003Ca href=\"/wiki/Wikibooks_talk:Artificial_Intelligence\" title=\"Wikibooks talk:Artificial Intelligence\"\u003Eits talk page\u003C/a\u003E.\n\u003C/p\u003E\n\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E";}}());</script></div>
+	<div class="mw-indicators">
+	</div>
+	<h1 id="firstHeading" class="firstHeading mw-first-heading"><span class="mw-page-title-main">Haskell/Category theory</span></h1>
+	<div id="bodyContent" class="vector-body">
+		<div id="siteSub" class="noprint">From Wikibooks, open books for an open world</div>
+		<div id="contentSub"><div id="mw-content-subtitle"><div class="subpages">&lt; <a href="/wiki/Haskell" title="Haskell">Haskell</a></div></div></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" class="mw-body-content"><div class="mw-content-ltr mw-parser-output" lang="en" dir="ltr"><div class="noprint">
+<table cellpadding="1" style="float: right; clear: right; border: 1px solid #8888aa; background: #f7f8ff; padding: 5px; font-size: 95%; margin: 0 15px 0 15px;">
+<tbody><tr>
+<td style="background: #ccf; text-align: center;"><b>Category theory</b> (<a href="/wiki/Haskell/Solutions/Category_theory" title="Haskell/Solutions/Category theory">Solutions</a>)
+</td></tr>
+<tr>
+<td><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Introduction_to_categories"><span class="tocnumber">1</span> <span class="toctext">Introduction to categories</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Category_laws"><span class="tocnumber">1.1</span> <span class="toctext">Category laws</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Hask,_the_Haskell_category"><span class="tocnumber">1.2</span> <span class="toctext"><b>Hask</b>, the Haskell category</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Functors"><span class="tocnumber">2</span> <span class="toctext">Functors</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Functors_on_Hask"><span class="tocnumber">2.1</span> <span class="toctext">Functors on <b>Hask</b></span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#Translating_categorical_concepts_into_Haskell"><span class="tocnumber">2.2</span> <span class="toctext">Translating categorical concepts into Haskell</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="#Monads"><span class="tocnumber">3</span> <span class="toctext">Monads</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="#Example:_the_powerset_functor_is_also_a_monad"><span class="tocnumber">3.1</span> <span class="toctext">Example: the powerset functor is also a monad</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9"><a href="#The_monad_laws_and_their_importance"><span class="tocnumber">4</span> <span class="toctext">The monad laws and their importance</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="#The_first_law"><span class="tocnumber">4.1</span> <span class="toctext">The first law</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="#The_second_law"><span class="tocnumber">4.2</span> <span class="toctext">The second law</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#The_third_and_fourth_laws"><span class="tocnumber">4.3</span> <span class="toctext">The third and fourth laws</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Application_to_do-blocks"><span class="tocnumber">4.4</span> <span class="toctext">Application to do-blocks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14"><a href="#Summary"><span class="tocnumber">5</span> <span class="toctext">Summary</span></a></li>
+<li class="toclevel-1"><a href="#Notes"><span class="tocnumber">6</span> <span class="toctext">Notes</span></a></li>
+</ul>
+</div>
+
+</td></tr>
+<tr>
+<td style="background: #ccf; text-align: center;"><b>Wider Theory</b>
+</td></tr>
+<tr>
+<td>
+<p><a href="/wiki/Haskell/Denotational_semantics" title="Haskell/Denotational semantics">Denotational semantics</a> <span class="noprint"><span typeof="mw:File"><a href="/wiki/Help:Development_stages" title="75% developed"><img alt="75% developed" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/62/75_percent.svg/9px-75_percent.svg.png" decoding="async" width="9" height="9" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/62/75_percent.svg/14px-75_percent.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/62/75_percent.svg/18px-75_percent.svg.png 2x" data-file-width="9" data-file-height="9" /></a></span></span>
+<br /><a href="/w/index.php?title=Haskell/Equational_reasoning&amp;action=edit&amp;redlink=1" class="new" title="Haskell/Equational reasoning (does not exist)">Equational reasoning</a>
+<br /><a href="/w/index.php?title=Haskell/Program_derivation&amp;action=edit&amp;redlink=1" class="new" title="Haskell/Program derivation (does not exist)">Program derivation</a>
+<br /><a class="mw-selflink selflink">Category theory</a>
+<br /><a href="/wiki/Haskell/The_Curry%E2%80%93Howard_isomorphism" title="Haskell/The Curry–Howard isomorphism">The Curry–Howard isomorphism</a>
+<br /><a href="/wiki/Haskell/Fix_and_recursion" title="Haskell/Fix and recursion">fix and recursion</a>
+</p>
+<div style="clear:both;"><small class="noprint"><a class="external text" href="https://en.wikibooks.org/w/index.php?title=Template:Haskell_chapter/Wider_Theory&amp;action=edit">edit this chapter</a>
+</small></div>
+</td></tr></tbody></table>
+</div>
+<p>This article attempts to give an overview of category theory, in so far as it applies to Haskell. To this end, Haskell code will be given alongside the mathematical definitions. Absolute rigour is not followed; in its place, we seek to give the reader an intuitive feel for what the concepts of category theory are and how they relate to Haskell.
+</p>
+<h2><span class="mw-headline" id="Introduction_to_categories">Introduction to categories</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=1" title="Edit section: Introduction to categories" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=1" title="Edit section&#039;s source code: Introduction to categories"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="mw-halign-left" typeof="mw:File/Frame"><a href="/wiki/File:Simple-cat.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/d/d3/Simple-cat.png" decoding="async" width="178" height="161" class="mw-file-element" data-file-width="178" data-file-height="161" /></a><figcaption>A simple category, with three objects <i>A</i>, <i>B</i> and <i>C</i>, three identity morphisms <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {id} _{A}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {id} _{A}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f8e9928a7f50859422671451607b974756960fa" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:3.404ex; height:2.509ex;" alt="{\displaystyle \operatorname {id} _{A}}"></span>, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {id} _{B}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>B</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {id} _{B}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f6646da5b8128a216643eb50f2eaee72a10304c9" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:3.419ex; height:2.509ex;" alt="{\displaystyle \operatorname {id} _{B}}"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {id} _{C}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>C</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {id} _{C}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/304e71120a4565fdbe9347bfe228553b2309deb8" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:3.421ex; height:2.509ex;" alt="{\displaystyle \operatorname {id} _{C}}"></span>, and two other morphisms <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f:C\to B}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>:</mo>
+        <mi>C</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>B</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f:C\to B}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/312658c92cf16dd35d6aa8cb91559e23a35fb317" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.36ex; height:2.509ex;" alt="{\displaystyle f:C\to B}"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle g:A\to B}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>g</mi>
+        <mo>:</mo>
+        <mi>A</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>B</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle g:A\to B}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/aa58b97ecef6d1fba720a00e9e74c4ec6431e414" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.174ex; height:2.509ex;" alt="{\displaystyle g:A\to B}"></span>. The third element (the specification of how to compose the morphisms) is not shown.</figcaption></figure>
+<p>A category is, in essence, a simple collection. It has three components:
+</p>
+<ul><li>A collection of <b>objects</b>.</li>
+<li>A collection of <b>morphisms</b>, each of which ties two objects (a <i>source object</i> and a <i>target object</i>) together. (These are sometimes called <b>arrows</b>, but we avoid that term here as it has other connotations in Haskell.) If <i>f</i> is a morphism with source object <i>C</i> and target object <i>B</i>, we write <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f:C\to B}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>:</mo>
+        <mi>C</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>B</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f:C\to B}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/312658c92cf16dd35d6aa8cb91559e23a35fb317" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.36ex; height:2.509ex;" alt="{\displaystyle f:C\to B}"></span>.</li>
+<li>A notion of <b>composition</b> of these morphisms. If <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle g:A\to B}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>g</mi>
+        <mo>:</mo>
+        <mi>A</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>B</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle g:A\to B}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/aa58b97ecef6d1fba720a00e9e74c4ec6431e414" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.174ex; height:2.509ex;" alt="{\displaystyle g:A\to B}"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f:B\to C}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>:</mo>
+        <mi>B</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f:B\to C}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4b448a777ac6445ae3fae6c375a26d6430084eaa" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.36ex; height:2.509ex;" alt="{\displaystyle f:B\to C}"></span> are two morphisms, they can be composed, resulting in a morphism <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f\circ g:A\to C}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>g</mi>
+        <mo>:</mo>
+        <mi>A</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f\circ g:A\to C}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/70264bafbab31e3cdf6d8ddbfd7c6f0d599f4ce1" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:13.65ex; height:2.509ex;" alt="{\displaystyle f\circ g:A\to C}"></span>.</li></ul>
+<p>Lots of things form categories. For example, <b>Set</b> is the category of all sets with morphisms as standard functions and composition being standard function composition. (Category names are often typeset in bold face.) <b>Grp</b> is the category of all groups with morphisms as functions that preserve group operations (the group homomorphisms), i.e. for any two groups, <i>G</i> with operation <i>*</i> and <i>H</i> with operation <i>·</i>, a function <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle k:G\to H}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>k</mi>
+        <mo>:</mo>
+        <mi>G</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>H</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle k:G\to H}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e0f323ce9b8c9e44fee45ff070f1d488d319030d" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:10.653ex; height:2.176ex;" alt="{\displaystyle k:G\to H}"></span> is a morphism in <b>Grp</b> if:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle k(u*v)=k(u)\cdot k(v)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>k</mi>
+        <mo stretchy="false">(</mo>
+        <mi>u</mi>
+        <mo>&#x2217;<!-- ∗ --></mo>
+        <mi>v</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>k</mi>
+        <mo stretchy="false">(</mo>
+        <mi>u</mi>
+        <mo stretchy="false">)</mo>
+        <mo>&#x22C5;<!-- ⋅ --></mo>
+        <mi>k</mi>
+        <mo stretchy="false">(</mo>
+        <mi>v</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle k(u*v)=k(u)\cdot k(v)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8992f41de3d76873c535a110a0641bde5a35412d" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:20.948ex; height:2.843ex;" alt="{\displaystyle k(u*v)=k(u)\cdot k(v)}"></span></dd></dl>
+<p>It may seem that morphisms are always functions, but this needn't be the case. For example, any partial order (<i>P</i>, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \leq }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>&#x2264;<!-- ≤ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \leq }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/440568a09c3bfdf0e1278bfa79eb137c04e94035" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.505ex; width:1.808ex; height:2.176ex;" alt="{\displaystyle \leq }"></span>) defines a category where the objects are the elements of <i>P</i>, and there is a morphism between any two objects <i>A</i> and <i>B</i> iff <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle A\leq B}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>A</mi>
+        <mo>&#x2264;<!-- ≤ --></mo>
+        <mi>B</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A\leq B}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/8b9a5b16c80e28e48322cb621b6c445cb68fcaf2" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.505ex; width:6.606ex; height:2.343ex;" alt="{\displaystyle A\leq B}"></span>. Moreover, there are allowed to be multiple morphisms with the same source and target objects; using the <b>Set</b> example, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \sin }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>sin</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \sin }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ee55beec18afd710e7ab767964b915b020c65093" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:2.856ex; height:2.176ex;" alt="{\displaystyle \sin }"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \cos }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>cos</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \cos }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e473a3de151d75296f141f9f482fe59d582a7509" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:3.111ex; height:1.676ex;" alt="{\displaystyle \cos }"></span> are both functions with source object <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathbb {R} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="double-struck">R</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathbb {R} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/786849c765da7a84dbc3cce43e96aad58a5868dc" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:1.678ex; height:2.176ex;" alt="{\displaystyle \mathbb {R} }"></span> (the set of real numbers) and target object <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle [-1,1]}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo stretchy="false">[</mo>
+        <mo>&#x2212;<!-- − --></mo>
+        <mn>1</mn>
+        <mo>,</mo>
+        <mn>1</mn>
+        <mo stretchy="false">]</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle [-1,1]}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/51e3b7f14a6f70e614728c583409a0b9a8b9de01" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:6.461ex; height:2.843ex;" alt="{\displaystyle [-1,1]}"></span>, but they’re most certainly not the same morphism!
+</p>
+<h3><span class="mw-headline" id="Category_laws">Category laws</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=2" title="Edit section: Category laws" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=2" title="Edit section&#039;s source code: Category laws"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>There are three laws that categories need to follow. Firstly, and most simply, the composition of morphisms needs to be <i><b>associative</b></i>. Symbolically,
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f\circ (g\circ h)=(f\circ g)\circ h}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>g</mi>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>h</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo stretchy="false">(</mo>
+        <mi>f</mi>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>g</mi>
+        <mo stretchy="false">)</mo>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>h</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f\circ (g\circ h)=(f\circ g)\circ h}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0c9a287ed507e2a7bea4247e08a18a2d9e65c437" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:22.963ex; height:2.843ex;" alt="{\displaystyle f\circ (g\circ h)=(f\circ g)\circ h}"></span></dd></dl>
+<p>Morphisms are applied right to left in Haskell and most commonly in mathematics, so with <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f\circ g}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>g</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f\circ g}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b2f61ca7838709fbae07dce9c0d513770f10cfae" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:4.589ex; height:2.509ex;" alt="{\displaystyle f\circ g}"></span> first <i>g</i> is applied, then <i>f</i>.
+</p><p>Secondly, the category needs to be <i><b>closed</b></i> under the composition operation. So if <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f:B\to C}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>:</mo>
+        <mi>B</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f:B\to C}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4b448a777ac6445ae3fae6c375a26d6430084eaa" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.36ex; height:2.509ex;" alt="{\displaystyle f:B\to C}"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle g:A\to B}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>g</mi>
+        <mo>:</mo>
+        <mi>A</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>B</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle g:A\to B}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/aa58b97ecef6d1fba720a00e9e74c4ec6431e414" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.174ex; height:2.509ex;" alt="{\displaystyle g:A\to B}"></span>, then there must be some morphism <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle h:A\to C}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>h</mi>
+        <mo>:</mo>
+        <mi>A</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h:A\to C}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7b72c0a478e24c65f0cdff6f82aeeb1ef69745e2" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:10.4ex; height:2.176ex;" alt="{\displaystyle h:A\to C}"></span> in the category such that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle h=f\circ g}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>h</mi>
+        <mo>=</mo>
+        <mi>f</mi>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>g</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle h=f\circ g}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a14345f3938c66b1fde08e18d8b301a59c5775a5" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:9.027ex; height:2.509ex;" alt="{\displaystyle h=f\circ g}"></span>. We can see how this works using the following category:
+</p>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a href="/wiki/File:Composition-ex.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/2/26/Composition-ex.png" decoding="async" width="413" height="105" class="mw-file-element" data-file-width="413" data-file-height="105" /></a><figcaption></figcaption></figure>
+<p><i>f</i> and <i>g</i> are both morphisms so we must be able to compose them and get another morphism in the category. So which is the morphism <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f\circ g}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>g</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f\circ g}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b2f61ca7838709fbae07dce9c0d513770f10cfae" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:4.589ex; height:2.509ex;" alt="{\displaystyle f\circ g}"></span>? The only option is <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {id} _{A}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {id} _{A}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f8e9928a7f50859422671451607b974756960fa" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:3.404ex; height:2.509ex;" alt="{\displaystyle \operatorname {id} _{A}}"></span>. Similarly, we see that <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle g\circ f=\operatorname {id} _{B}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>g</mi>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>f</mi>
+        <mo>=</mo>
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>B</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle g\circ f=\operatorname {id} _{B}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/339d0b1baa7ecf9a425db4ddfb6ee384e6bbfd39" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:11.107ex; height:2.509ex;" alt="{\displaystyle g\circ f=\operatorname {id} _{B}}"></span>.
+</p><p>Lastly, given a category <i>C</i> there needs to be for every object <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle A}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>A</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7daff47fa58cdfd29dc333def748ff5fa4c923e3" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:1.743ex; height:2.176ex;" alt="{\displaystyle A}"></span> an <i><b>identity</b> morphism</i>, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {id} _{A}:A\to A}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+          </mrow>
+        </msub>
+        <mo>:</mo>
+        <mi>A</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>A</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {id} _{A}:A\to A}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/2d04b0307d8b0c8501ed7bbb34c72d9dff46d600" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:12.442ex; height:2.509ex;" alt="{\displaystyle \operatorname {id} _{A}:A\to A}"></span> that is an identity of composition with other morphisms. Put precisely, for every morphism <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle g:A\to B}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>g</mi>
+        <mo>:</mo>
+        <mi>A</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>B</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle g:A\to B}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/aa58b97ecef6d1fba720a00e9e74c4ec6431e414" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.174ex; height:2.509ex;" alt="{\displaystyle g:A\to B}"></span>:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle g\circ \operatorname {id} _{A}=\operatorname {id} _{B}\circ g=g}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>g</mi>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+          </mrow>
+        </msub>
+        <mo>=</mo>
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>B</mi>
+          </mrow>
+        </msub>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>g</mi>
+        <mo>=</mo>
+        <mi>g</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle g\circ \operatorname {id} _{A}=\operatorname {id} _{B}\circ g=g}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/86cf6d04d40d85c5851cf0300ec42c1c5f717df6" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:20.112ex; height:2.509ex;" alt="{\displaystyle g\circ \operatorname {id} _{A}=\operatorname {id} _{B}\circ g=g}"></span></dd></dl>
+<h3><span id="Hask.2C_the_Haskell_category"></span><span class="mw-headline" id="Hask,_the_Haskell_category"><b>Hask</b>, the Haskell category</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=3" title="Edit section: Hask, the Haskell category" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=3" title="Edit section&#039;s source code: Hask, the Haskell category"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The main category we'll be concerning ourselves with in this article is <b>Hask</b>, which treats Haskell types as objects and Haskell functions as morphisms and uses <code>(.)</code> for composition: a function <code>f&#160;:: A -&gt; B</code> for types <code>A</code> and <code>B</code> is a morphism in <b>Hask</b>. We can check the first and second law easily: we know <code>(.)</code> is an associative function, and clearly, for any <code>f</code> and <code>g</code>, <code>f . g</code> is another function. In <b>Hask</b>, the identity morphism is <code>id</code>, and we have trivially:
+</p>
+<dl><dd><code>id . f = f . id = f</code></dd></dl>
+<p><sup id="cite_ref-1" class="reference"><a href="#cite_note-1">&#91;1&#93;</a></sup> This isn't an exact translation of the law above, though; we're missing subscripts. The function <code>id</code> in Haskell is <i>polymorphic</i> — it can take many different types for its domain and range, or, in category-speak, can have many different source and target objects. But morphisms in category theory are by definition <i>monomorphic</i> — each morphism has one specific source object and one specific target object (note: <i>monomorphic</i> here is not being used in the category theoretic sense). A polymorphic Haskell function can be made monomorphic by specifying its type (<i>instantiating</i> with a monomorphic type), so it would be more precise if we said that the identity morphism from <b>Hask</b> on a type <code>A</code> is <code>(id&#160;:: A -&gt; A)</code>. With this in mind, the above law would be rewritten as:
+</p>
+<dl><dd><code>(id&#160;:: B -&gt; B) . f = f . (id&#160;:: A -&gt; A) = f</code></dd></dl>
+<p>However, for simplicity, we will ignore this distinction when the meaning is clear.
+</p>
+<table style="margin-left: auto; margin-right: auto; width: 70ex; background: transparent; border: 1px solid #aaa; padding: 0.5em;"><tbody><tr>
+<th>Exercises </th></tr>
+<tr><td>
+<ul><li>As was mentioned, any partial order (<i>P</i>, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \leq }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>&#x2264;<!-- ≤ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \leq }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/440568a09c3bfdf0e1278bfa79eb137c04e94035" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.505ex; width:1.808ex; height:2.176ex;" alt="{\displaystyle \leq }"></span>) is a category with objects as the elements of <i>P</i> and a morphism between elements <i>a</i> and <i>b</i> iff a <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \leq }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>&#x2264;<!-- ≤ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \leq }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/440568a09c3bfdf0e1278bfa79eb137c04e94035" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.505ex; width:1.808ex; height:2.176ex;" alt="{\displaystyle \leq }"></span> b. Which of the above laws guarantees the transitivity of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \leq }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo>&#x2264;<!-- ≤ --></mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \leq }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/440568a09c3bfdf0e1278bfa79eb137c04e94035" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.505ex; width:1.808ex; height:2.176ex;" alt="{\displaystyle \leq }"></span>?</li>
+<li>(Harder.) If we add another morphism to the above example, as illustrated below, it fails to be a category. Why? Hint: think about associativity of the composition operation.</li></ul>
+<figure class="mw-default-size mw-halign-center" typeof="mw:File"><a href="/wiki/File:Not-a-cat.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/6/65/Not-a-cat.png" decoding="async" width="413" height="102" class="mw-file-element" data-file-width="413" data-file-height="102" /></a><figcaption></figcaption></figure></td>
+</tr></tbody></table>
+<h2><span class="mw-headline" id="Functors">Functors</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=4" title="Edit section: Functors" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=4" title="Edit section&#039;s source code: Functors"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="mw-halign-right" typeof="mw:File/Frame"><a href="/wiki/File:Functor.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/3/36/Functor.png" decoding="async" width="436" height="243" class="mw-file-element" data-file-width="436" data-file-height="243" /></a><figcaption>A functor between two categories, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathbf {C} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="bold">C</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathbf {C} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/11de80478fce9090e43eed19100b37cc841661e8" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:1.931ex; height:2.176ex;" alt="{\displaystyle \mathbf {C} }"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathbf {D} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="bold">D</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathbf {D} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b2345293072878db24e119c580def49ad582e3ed" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:2.05ex; height:2.176ex;" alt="{\displaystyle \mathbf {D} }"></span>. Of note is that the objects <i>A</i> and <i>B</i> both get mapped to the same object in <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathbf {D} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="bold">D</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathbf {D} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b2345293072878db24e119c580def49ad582e3ed" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:2.05ex; height:2.176ex;" alt="{\displaystyle \mathbf {D} }"></span>, and that therefore <i>g</i> becomes a morphism with the same source and target object (but isn't necessarily an identity), and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {id} _{A}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {id} _{A}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f8e9928a7f50859422671451607b974756960fa" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:3.404ex; height:2.509ex;" alt="{\displaystyle \operatorname {id} _{A}}"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {id} _{B}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>B</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {id} _{B}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f6646da5b8128a216643eb50f2eaee72a10304c9" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:3.419ex; height:2.509ex;" alt="{\displaystyle \operatorname {id} _{B}}"></span> become the same morphism. The arrows showing the mapping of objects are shown in a dotted, pale olive. The arrows showing the mapping of morphisms are shown in a dotted, pale blue.</figcaption></figure>
+<p>So we have some categories which have objects and morphisms that relate our objects together. The next Big Topic in category theory is the <b>functor</b>, which relates categories together. A functor is essentially a transformation between categories, so given categories <i>C</i> and <i>D</i>, a functor <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle F:C\to D}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+        <mo>:</mo>
+        <mi>C</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>D</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F:C\to D}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d082755579fdc0f7d9daca655472d59e8347242d" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:10.983ex; height:2.176ex;" alt="{\displaystyle F:C\to D}"></span>:
+</p>
+<ul><li>Maps any object <i>A</i> in <i>C</i> to <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle F(A)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>A</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F(A)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/037cd90d84da2a2abfeb7b975be991bcbdfeda80" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:5.293ex; height:2.843ex;" alt="{\displaystyle F(A)}"></span>, in <i>D</i>.</li>
+<li>Maps morphisms <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f:A\to B}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>:</mo>
+        <mi>A</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>B</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f:A\to B}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/20040a52d9391f2fe271f0aaa300bf7887a0c7b1" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.337ex; height:2.509ex;" alt="{\displaystyle f:A\to B}"></span> in <i>C</i> to <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle F(f):F(A)\to F(B)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>f</mi>
+        <mo stretchy="false">)</mo>
+        <mo>:</mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>A</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>B</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F(f):F(A)\to F(B)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9efd57d5d63dbad336cb7f1019d0cf5bde0b7217" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:20.987ex; height:2.843ex;" alt="{\displaystyle F(f):F(A)\to F(B)}"></span> in <i>D</i>.</li></ul>
+<p>One of the canonical examples of a functor is the forgetful functor <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathbf {Grp} \to \mathbf {Set} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="bold">G</mi>
+          <mi mathvariant="bold">r</mi>
+          <mi mathvariant="bold">p</mi>
+        </mrow>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="bold">S</mi>
+          <mi mathvariant="bold">e</mi>
+          <mi mathvariant="bold">t</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathbf {Grp} \to \mathbf {Set} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/30dbb1a1256ddef855212e8e5d28764c4d22e0ef" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:12.052ex; height:2.509ex;" alt="{\displaystyle \mathbf {Grp} \to \mathbf {Set} }"></span> which maps groups to their underlying sets and group morphisms to the functions which behave the same but are defined on sets instead of groups. Another example is the power set functor <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathbf {Set} \to \mathbf {Set} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="bold">S</mi>
+          <mi mathvariant="bold">e</mi>
+          <mi mathvariant="bold">t</mi>
+        </mrow>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="bold">S</mi>
+          <mi mathvariant="bold">e</mi>
+          <mi mathvariant="bold">t</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathbf {Set} \to \mathbf {Set} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b022cc75fa0e48fdad8478ee962e0f4317a04524" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:11.114ex; height:2.176ex;" alt="{\displaystyle \mathbf {Set} \to \mathbf {Set} }"></span> which maps sets to their power sets and maps functions <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f:X\to Y}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>:</mo>
+        <mi>X</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>Y</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f:X\to Y}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/abd1e080abef4bbdab67b43819c6431e7561361c" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.583ex; height:2.509ex;" alt="{\displaystyle f:X\to Y}"></span> to functions <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle {\mathcal {P}}(X)\to {\mathcal {P}}(Y)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>X</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>Y</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle {\mathcal {P}}(X)\to {\mathcal {P}}(Y)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4e583a6a4ca4a2f8badc35fce98a2be633b27756" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:14.393ex; height:2.843ex;" alt="{\displaystyle {\mathcal {P}}(X)\to {\mathcal {P}}(Y)}"></span> which take inputs <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle U\subseteq X}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>U</mi>
+        <mo>&#x2286;<!-- ⊆ --></mo>
+        <mi>X</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle U\subseteq X}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bc4b6027fd83ac32e7b4f4113c60a69041292723" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.505ex; width:6.861ex; height:2.343ex;" alt="{\displaystyle U\subseteq X}"></span> and return <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f(U)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>U</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f(U)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/562e763c2291125cfb06f14882bc9f9aba8a7d7d" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:4.87ex; height:2.843ex;" alt="{\displaystyle f(U)}"></span>, the image of <i>U</i> under <i>f</i>, defined by <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f(U)=\{\,f(u):u\in U\,\}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>U</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mspace width="thinmathspace" />
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>u</mi>
+        <mo stretchy="false">)</mo>
+        <mo>:</mo>
+        <mi>u</mi>
+        <mo>&#x2208;<!-- ∈ --></mo>
+        <mi>U</mi>
+        <mspace width="thinmathspace" />
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f(U)=\{\,f(u):u\in U\,\}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9f43bce75694c821a1ba961e38a6014970c84b52" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:23.376ex; height:2.843ex;" alt="{\displaystyle f(U)=\{\,f(u):u\in U\,\}}"></span>. For any category <i>C</i>, we can define a functor known as the identity functor on <i>C</i>, or <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle 1_{C}:C\to C}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mn>1</mn>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>C</mi>
+          </mrow>
+        </msub>
+        <mo>:</mo>
+        <mi>C</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle 1_{C}:C\to C}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b9d888fe13e21c88e488ca495c8d5b4b4ddcb32d" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:11.728ex; height:2.509ex;" alt="{\displaystyle 1_{C}:C\to C}"></span>, that just maps objects to themselves and morphisms to themselves. This will turn out to be useful in the <a href="#The_monad_laws_and_their_importance">monad laws</a> section later on.
+</p><p>Once again there are a few axioms that functors have to obey. Firstly, given an identity morphism <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {id} _{A}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {id} _{A}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f8e9928a7f50859422671451607b974756960fa" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:3.404ex; height:2.509ex;" alt="{\displaystyle \operatorname {id} _{A}}"></span> on an object <i>A</i>, <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle F(\operatorname {id} _{A})}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F(\operatorname {id} _{A})}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9500015a665d7728d5fd7785e5705fca7a6f991e" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:6.954ex; height:2.843ex;" alt="{\displaystyle F(\operatorname {id} _{A})}"></span> must be the identity morphism on <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle F(A)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>A</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F(A)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/037cd90d84da2a2abfeb7b975be991bcbdfeda80" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:5.293ex; height:2.843ex;" alt="{\displaystyle F(A)}"></span>, i.e.:
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle F(\operatorname {id} _{A})=\operatorname {id} _{F(A)}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+          </mrow>
+        </msub>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>F</mi>
+            <mo stretchy="false">(</mo>
+            <mi>A</mi>
+            <mo stretchy="false">)</mo>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F(\operatorname {id} _{A})=\operatorname {id} _{F(A)}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/85f69c2aed3971b8f9dbe83907a4246726012cd3" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -1.171ex; width:15.967ex; height:3.176ex;" alt="{\displaystyle F(\operatorname {id} _{A})=\operatorname {id} _{F(A)}}"></span></dd></dl>
+<p>Secondly functors must distribute over morphism composition, i.e.
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle F(f\circ g)=F(f)\circ F(g)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>f</mi>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>g</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>f</mi>
+        <mo stretchy="false">)</mo>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>F</mi>
+        <mo stretchy="false">(</mo>
+        <mi>g</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle F(f\circ g)=F(f)\circ F(g)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9c5c4ae596dc0b30c6a779cc39471db28cac903e" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:22.927ex; height:2.843ex;" alt="{\displaystyle F(f\circ g)=F(f)\circ F(g)}"></span></dd></dl>
+<table style="margin-left: auto; margin-right: auto; width: 70ex; background: transparent; border: 1px solid #aaa; padding: 0.5em;"><tbody><tr>
+<th>Exercises </th></tr>
+<tr><td>
+For the diagram given on the right, check these functor laws.</td>
+</tr></tbody></table>
+<h3><span class="mw-headline" id="Functors_on_Hask">Functors on <b>Hask</b></span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=5" title="Edit section: Functors on Hask" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=5" title="Edit section&#039;s source code: Functors on Hask"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The Functor typeclass you have probably seen in Haskell does in fact tie in with the categorical notion of a functor. Remember that a functor has two parts: it maps objects in one category to objects in another and morphisms in the first category to morphisms in the second. Functors in Haskell are from <b>Hask</b> to <i>func</i>, where <i>func</i> is the subcategory of <b>Hask</b> defined on just that functor's types. E.g. the list functor goes from <b>Hask</b> to <b>Lst</b>, where <b>Lst</b> is the category containing only <i>list types</i>, that is, <code>[T]</code> for any type <code>T</code>. The morphisms in <b>Lst</b> are functions defined on list types, that is, functions <code>[T] -&gt; [U]</code> for types <code>T</code>, <code>U</code>. How does this tie into the Haskell typeclass Functor? Recall its definition:
+</p>
+<pre>class Functor (f&#160;:: * -&gt; *) where
+  fmap&#160;:: (a -&gt; b) -&gt; f a -&gt; f b
+</pre>
+<p>Let's have a sample instance, too:
+</p>
+<pre>instance Functor Maybe where
+  fmap f (Just x) = Just (f x)
+  fmap _ Nothing  = Nothing
+</pre>
+<p>Here's the key part: the <i>type constructor</i> Maybe takes any type <code>T</code> to a new type, <code>Maybe T</code>. Also, <code>fmap</code> restricted to Maybe types takes a function <code>a -&gt; b</code> to a function <code>Maybe a -&gt; Maybe b</code>. But that's it! We've defined two parts, something that takes objects in <b>Hask</b> to objects in another category (that of Maybe types and functions defined on Maybe types), and something that takes morphisms in <b>Hask</b> to morphisms in this category. So Maybe is a functor.
+</p><p>A useful intuition regarding Haskell functors is that they represent types that can be mapped over. This could be a list or a Maybe, but also more complicated structures like trees. A function that does some mapping could be written using <code>fmap</code>, then any functor structure could be passed into this function. E.g. you could write a generic function that covers all of Data.List.map, Data.Map.map, Data.Array.IArray.amap, and so on.
+</p><p>What about the functor axioms? The polymorphic function <code>id</code> takes the place of <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {id} _{A}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>id</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>A</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {id} _{A}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/1f8e9928a7f50859422671451607b974756960fa" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:3.404ex; height:2.509ex;" alt="{\displaystyle \operatorname {id} _{A}}"></span> for any <i>A</i>, so the first law states:
+</p>
+<pre>fmap id = id
+</pre>
+<p>With our above intuition in mind, this states that mapping over a structure doing nothing to each element is equivalent to doing nothing overall. Secondly, morphism composition is just <code>(.)</code>, so
+</p>
+<pre>fmap (f . g) = fmap f . fmap g
+</pre>
+<p>This second law is very useful in practice. Picturing the functor as a list or similar container, the right-hand side is a two-pass algorithm: we map over the structure, performing <code>g</code>, then map over it again, performing <code>f</code>. The functor axioms guarantee we can transform this into a single-pass algorithm that performs <code>f . g</code>. This is a process known as <i>fusion</i>.
+</p>
+<table style="margin-left: auto; margin-right: auto; width: 70ex; background: transparent; border: 1px solid #aaa; padding: 0.5em;"><tbody><tr>
+<th>Exercises </th></tr>
+<tr><td>
+Check the laws for the Maybe and list functors.</td>
+</tr></tbody></table>
+<h3><span class="mw-headline" id="Translating_categorical_concepts_into_Haskell">Translating categorical concepts into Haskell</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=6" title="Edit section: Translating categorical concepts into Haskell" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=6" title="Edit section&#039;s source code: Translating categorical concepts into Haskell"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Functors provide a good example of how category theory gets translated into Haskell. The key points to remember are that:
+</p>
+<ul><li>We work in the category <b>Hask</b> and its subcategories.</li>
+<li>Objects are types.</li>
+<li>Morphisms are functions.</li>
+<li>Things that take a type and return another type are type constructors.</li>
+<li>Things that take a function and return another function are higher-order functions.</li>
+<li>Typeclasses, along with the polymorphism they provide, make a nice way of capturing the fact that in category theory things are often defined over a number of objects at once.</li></ul>
+<h2><span class="mw-headline" id="Monads">Monads</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=7" title="Edit section: Monads" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=7" title="Edit section&#039;s source code: Monads"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h2>
+<figure class="mw-halign-right" typeof="mw:File/Frame"><a href="/wiki/File:Unit-join.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/b/b9/Unit-join.png" decoding="async" width="261" height="213" class="mw-file-element" data-file-width="261" data-file-height="213" /></a><figcaption><i>unit</i> and <i>join</i>, the two morphisms that must exist for every object for a given monad.</figcaption></figure>
+<p>Monads are obviously an extremely important concept in Haskell, and in fact they originally came from category theory. A <i>monad</i> is a special type of functor, from a category to that same category, that supports some additional structure. So, down to definitions. A monad is a functor <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle M:C\to C}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>M</mi>
+        <mo>:</mo>
+        <mi>C</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle M:C\to C}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ebc39680c9b41420789a0f2cd1e3e7e2bea1b714" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:11.526ex; height:2.176ex;" alt="{\displaystyle M:C\to C}"></span>, along with two morphisms<sup id="cite_ref-2" class="reference"><a href="#cite_note-2">&#91;2&#93;</a></sup> for every object <i>X</i> in <i>C</i>:
+</p>
+<ul><li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {unit} _{X}^{M}:X\to M(X)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msubsup>
+          <mi>unit</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>X</mi>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>M</mi>
+          </mrow>
+        </msubsup>
+        <mo>:</mo>
+        <mi>X</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>X</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {unit} _{X}^{M}:X\to M(X)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/95313873e132a2c4fc9d8496c07f4d654b084bb1" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:19.858ex; height:3.176ex;" alt="{\displaystyle \operatorname {unit} _{X}^{M}:X\to M(X)}"></span></li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {join} _{X}^{M}:M(M(X))\to M(X)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msubsup>
+          <mi>join</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>X</mi>
+          </mrow>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>M</mi>
+          </mrow>
+        </msubsup>
+        <mo>:</mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>X</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>X</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {join} _{X}^{M}:M(M(X))\to M(X)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a3c26db37e43aab79cf51ddd0adf66009a5bb743" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; margin-left: -0.127ex; width:28.165ex; height:3.176ex;" alt="{\displaystyle \operatorname {join} _{X}^{M}:M(M(X))\to M(X)}"></span></li></ul>
+<p>When the monad under discussion is obvious, we’ll leave out the <i>M</i> superscript for these functions and just talk about <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {unit} _{X}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>unit</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>X</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {unit} _{X}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bcdf616394ca2c39933995e6c80574dbd32abf55" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:5.769ex; height:2.509ex;" alt="{\displaystyle \operatorname {unit} _{X}}"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {join} _{X}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>join</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>X</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {join} _{X}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/35ad6bd2127c8d2bbfdf5764678661c9e481cf52" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; margin-left: -0.127ex; width:5.573ex; height:2.676ex;" alt="{\displaystyle \operatorname {join} _{X}}"></span> for some <i>X</i>.
+</p><p>Let’s see how this translates to the Haskell typeclass Monad, then.
+</p>
+<pre>class Functor m =&gt; Monad m where
+  return&#160;:: a -&gt; m a
+  (&gt;&gt;=) &#160;:: m a -&gt; (a -&gt; m b) -&gt; m b
+</pre>
+<p>The class constraint of <code>Functor m</code> ensures that we already have the functor structure: a mapping of objects and of morphisms. <code>return</code> is the (polymorphic) analogue to <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {unit} _{X}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>unit</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>X</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {unit} _{X}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/bcdf616394ca2c39933995e6c80574dbd32abf55" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:5.769ex; height:2.509ex;" alt="{\displaystyle \operatorname {unit} _{X}}"></span> for any <i>X</i>. But we have a problem. Although <code>return</code>’s type looks quite similar to that of <i>unit</i>; the other function, <code>(&gt;&gt;=)</code>, often called <i>bind</i>, bears no resemblance to <i>join</i>. There is however another monad function, <code>join&#160;:: Monad m =&gt; m (m a) -&gt; m a</code>, that looks quite similar. Indeed, we can recover <code>join</code> and <code>(&gt;&gt;=)</code> from each other:
+</p>
+<pre>join&#160;:: Monad m =&gt; m (m a) -&gt; m a
+join x = x &gt;&gt;= id
+
+(&gt;&gt;=)&#160;:: Monad m =&gt; m a -&gt; (a -&gt; m b) -&gt; m b
+x &gt;&gt;= f = join (fmap f x)
+</pre>
+<p>So specifying a monad’s <code>return</code>, <code>fmap</code>, and <code>join</code> is equivalent to specifying its <code>return</code> and <code>(&gt;&gt;=)</code>. It just turns out that the normal way of defining a monad in category theory is to give <i>unit</i> and <i>join</i>, whereas Haskell programmers like to give <code>return</code> and <code>(&gt;&gt;=)</code>.<sup id="cite_ref-3" class="reference"><a href="#cite_note-3">&#91;3&#93;</a></sup> Often, the categorical way makes more sense. Any time you have some kind of structure <i><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle M}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>M</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle M}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/f82cade9898ced02fdd08712e5f0c0151758a0dd" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:2.442ex; height:2.176ex;" alt="{\displaystyle M}"></span></i> and a natural way of taking any object <i><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle X}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>X</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle X}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/68baa052181f707c662844a465bfeeb135e82bab" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:1.98ex; height:2.176ex;" alt="{\displaystyle X}"></span></i> into <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle M(X)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>X</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle M(X)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b1f56579142abfdec868307b665356a273f2b251" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:6.232ex; height:2.843ex;" alt="{\displaystyle M(X)}"></span>, as well as a way of taking <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle M(M(X))}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>X</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle M(M(X))}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ac0d75d0442986227201b74021ecb01a048fce5a" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:10.483ex; height:2.843ex;" alt="{\displaystyle M(M(X))}"></span> into <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle M(X)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>X</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle M(X)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/b1f56579142abfdec868307b665356a273f2b251" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:6.232ex; height:2.843ex;" alt="{\displaystyle M(X)}"></span>, you probably have a monad. We can see this in the following example section.
+</p>
+<h3><span class="mw-headline" id="Example:_the_powerset_functor_is_also_a_monad">Example: the powerset functor is also a monad</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=8" title="Edit section: Example: the powerset functor is also a monad" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=8" title="Edit section&#039;s source code: Example: the powerset functor is also a monad"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The power set functor <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle P:\mathbf {Set} \to \mathbf {Set} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>P</mi>
+        <mo>:</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="bold">S</mi>
+          <mi mathvariant="bold">e</mi>
+          <mi mathvariant="bold">t</mi>
+        </mrow>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="bold">S</mi>
+          <mi mathvariant="bold">e</mi>
+          <mi mathvariant="bold">t</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle P:\mathbf {Set} \to \mathbf {Set} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ab37293ba6898d4768c7ea401c302a990fbfc0e7" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:14.796ex; height:2.176ex;" alt="{\displaystyle P:\mathbf {Set} \to \mathbf {Set} }"></span> described above forms a monad. For any set <i>S</i> you have a <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {unit} _{S}(x)=\{x\}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>unit</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>S</mi>
+          </mrow>
+        </msub>
+        <mo>&#x2061;<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mi>x</mi>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {unit} _{S}(x)=\{x\}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7cd4322c6eb694e4858968a7b0c8dc418ccef2f5" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:15.321ex; height:2.843ex;" alt="{\displaystyle \operatorname {unit} _{S}(x)=\{x\}}"></span>, mapping elements to their singleton set. Note that each of these singleton sets are trivially a subset of <i>S</i>, so <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {unit} _{S}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>unit</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>S</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {unit} _{S}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/4c09ab0904e4b5080b7282e578864566d84e723d" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:5.429ex; height:2.509ex;" alt="{\displaystyle \operatorname {unit} _{S}}"></span> returns elements of the powerset of <i>S</i>, as is required. Also, you can define a function <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {join} _{S}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>join</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>S</mi>
+          </mrow>
+        </msub>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {join} _{S}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/26cd41e87a578f14ef5a673e918c1c3ecea95a79" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; margin-left: -0.127ex; width:5.233ex; height:2.676ex;" alt="{\displaystyle \operatorname {join} _{S}}"></span> as follows: we receive an input <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle L\in {\mathcal {P}}({\mathcal {P}}(S))}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>L</mi>
+        <mo>&#x2208;<!-- ∈ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>S</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle L\in {\mathcal {P}}({\mathcal {P}}(S))}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/79b24f05775e2619a80f094b43c001aba1b45841" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:12.949ex; height:2.843ex;" alt="{\displaystyle L\in {\mathcal {P}}({\mathcal {P}}(S))}"></span>. This is:
+</p>
+<ul><li>A member of the powerset of the powerset of <i>S</i>.</li>
+<li>So a member of the set of all subsets of the set of all subsets of <i>S</i>.</li>
+<li>So a set of subsets of <i>S</i></li></ul>
+<p>We then return the union of these subsets, giving another subset of <i>S</i>. Symbolically, 
+</p>
+<dl><dd><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {join} _{S}(L)=\bigcup L}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>join</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>S</mi>
+          </mrow>
+        </msub>
+        <mo>&#x2061;<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>L</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo>&#x22C3;<!-- ⋃ --></mo>
+        <mi>L</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {join} _{S}(L)=\bigcup L}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a850bc0f80efd6bad2abb9efc7c15e1a52a8f05f" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -1.338ex; margin-left: -0.127ex; width:16.275ex; height:3.843ex;" alt="{\displaystyle \operatorname {join} _{S}(L)=\bigcup L}"></span>.</dd></dl>
+<p>Hence <i>P</i> is a monad <sup id="cite_ref-4" class="reference"><a href="#cite_note-4">&#91;4&#93;</a></sup>.
+</p><p>In fact, <i>P</i> is almost equivalent to the list monad; with the exception that we're talking lists instead of sets, they're almost the same. Compare:
+</p><p><br />
+</p><p><br />
+</p>
+<table class="wikitable" width="100%">
+
+<tbody><tr>
+<th colspan="2" width="50%">Power set functor on <b>Set</b>
+</th></tr>
+<tr>
+<th>Function type
+</th>
+<th>Definition
+</th></tr>
+
+<tr>
+<td colspan="2">Given a set <i>S</i> and a morphism <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f:A\to B}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>:</mo>
+        <mi>A</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>B</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f:A\to B}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/20040a52d9391f2fe271f0aaa300bf7887a0c7b1" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.337ex; height:2.509ex;" alt="{\displaystyle f:A\to B}"></span>:
+</td></tr>
+
+<tr>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle P(f):{\mathcal {P}}(A)\to {\mathcal {P}}(B)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>P</mi>
+        <mo stretchy="false">(</mo>
+        <mi>f</mi>
+        <mo stretchy="false">)</mo>
+        <mo>:</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>A</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>B</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle P(f):{\mathcal {P}}(A)\to {\mathcal {P}}(B)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/d0f511fe7576d010e7fd8f42836461994a0b281e" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:20.917ex; height:2.843ex;" alt="{\displaystyle P(f):{\mathcal {P}}(A)\to {\mathcal {P}}(B)}"></span>
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle (P(f))(S)=\{f(a):a\in S\}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo stretchy="false">(</mo>
+        <mi>P</mi>
+        <mo stretchy="false">(</mo>
+        <mi>f</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">(</mo>
+        <mi>S</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mi>f</mi>
+        <mo stretchy="false">(</mo>
+        <mi>a</mi>
+        <mo stretchy="false">)</mo>
+        <mo>:</mo>
+        <mi>a</mi>
+        <mo>&#x2208;<!-- ∈ --></mo>
+        <mi>S</mi>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle (P(f))(S)=\{f(a):a\in S\}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/72c77bb4fe842f28e6b99e6664d2ef1605fa6582" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:27.199ex; height:2.843ex;" alt="{\displaystyle (P(f))(S)=\{f(a):a\in S\}}"></span>
+</td></tr>
+
+<tr>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {unit} _{S}:S\to {\mathcal {P}}(S)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>unit</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>S</mi>
+          </mrow>
+        </msub>
+        <mo>:</mo>
+        <mi>S</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>S</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {unit} _{S}:S\to {\mathcal {P}}(S)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/0e2808dc8b633c63bbe792d3ad5bb694ee703d47" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:17.492ex; height:2.843ex;" alt="{\displaystyle \operatorname {unit} _{S}:S\to {\mathcal {P}}(S)}"></span>
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {unit} _{S}(x)=\{x\}}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>unit</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>S</mi>
+          </mrow>
+        </msub>
+        <mo>&#x2061;<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>x</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo fence="false" stretchy="false">{</mo>
+        <mi>x</mi>
+        <mo fence="false" stretchy="false">}</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {unit} _{S}(x)=\{x\}}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/7cd4322c6eb694e4858968a7b0c8dc418ccef2f5" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:15.321ex; height:2.843ex;" alt="{\displaystyle \operatorname {unit} _{S}(x)=\{x\}}"></span>
+</td></tr>
+
+<tr>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {join} _{S}:{\mathcal {P}}({\mathcal {P}}(S))\to {\mathcal {P}}(S)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>join</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>S</mi>
+          </mrow>
+        </msub>
+        <mo>:</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>S</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi class="MJX-tex-caligraphic" mathvariant="script">P</mi>
+          </mrow>
+        </mrow>
+        <mo stretchy="false">(</mo>
+        <mi>S</mi>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {join} _{S}:{\mathcal {P}}({\mathcal {P}}(S))\to {\mathcal {P}}(S)}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/74548725c86bcaf910f1352e42e4476ddd9f81ea" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; margin-left: -0.127ex; width:24.321ex; height:2.843ex;" alt="{\displaystyle \operatorname {join} _{S}:{\mathcal {P}}({\mathcal {P}}(S))\to {\mathcal {P}}(S)}"></span>
+</td>
+<td><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \operatorname {join} _{S}(L)=\bigcup L}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <msub>
+          <mi>join</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>S</mi>
+          </mrow>
+        </msub>
+        <mo>&#x2061;<!-- ⁡ --></mo>
+        <mo stretchy="false">(</mo>
+        <mi>L</mi>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mo>&#x22C3;<!-- ⋃ --></mo>
+        <mi>L</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \operatorname {join} _{S}(L)=\bigcup L}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a850bc0f80efd6bad2abb9efc7c15e1a52a8f05f" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -1.338ex; margin-left: -0.127ex; width:16.275ex; height:3.843ex;" alt="{\displaystyle \operatorname {join} _{S}(L)=\bigcup L}"></span>
+</td></tr>
+<tr>
+<th colspan="2" width="50%">List monad from Haskell
+</th></tr>
+
+<tr>
+<th>Function type
+</th>
+<th>Definition
+</th></tr>
+
+<tr>
+<td colspan="2">Given a type <code>T</code> and a function <code>f&#160;:: A -&gt; B</code>
+</td></tr>
+
+<tr>
+<td><code>fmap f&#160;:: [A] -&gt; [B]</code>
+</td>
+<td><code>fmap f xs = [ f a | a &lt;- xs ]</code>
+</td></tr>
+
+<tr>
+<td><code>return&#160;:: T -&gt; [T]</code>
+</td>
+<td><code>return x = [x]</code>
+</td></tr>
+
+<tr>
+<td><code>join&#160;:: [[T]] -&gt; [T]</code>
+</td>
+<td><code>join xs = concat xs</code>
+</td></tr></tbody></table>
+<h2><span class="mw-headline" id="The_monad_laws_and_their_importance">The monad laws and their importance</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=9" title="Edit section: The monad laws and their importance" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=9" title="Edit section&#039;s source code: The monad laws and their importance"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>Just as functors had to obey certain axioms in order to be called functors, monads have a few of their own. We'll first list them, then translate to Haskell, then see why they’re important.
+</p><p>Given a monad <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle M:C\to C}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>M</mi>
+        <mo>:</mo>
+        <mi>C</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle M:C\to C}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/ebc39680c9b41420789a0f2cd1e3e7e2bea1b714" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.338ex; width:11.526ex; height:2.176ex;" alt="{\displaystyle M:C\to C}"></span> and a morphism <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle f:A\to B}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>f</mi>
+        <mo>:</mo>
+        <mi>A</mi>
+        <mo stretchy="false">&#x2192;<!-- → --></mo>
+        <mi>B</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle f:A\to B}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/20040a52d9391f2fe271f0aaa300bf7887a0c7b1" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:10.337ex; height:2.509ex;" alt="{\displaystyle f:A\to B}"></span> for <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle A,B\in C}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>A</mi>
+        <mo>,</mo>
+        <mi>B</mi>
+        <mo>&#x2208;<!-- ∈ --></mo>
+        <mi>C</mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle A,B\in C}</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/6c8ede999d0d31fb6a8bf589f6c80e74bfc06dce" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.671ex; width:9.148ex; height:2.509ex;" alt="{\displaystyle A,B\in C}"></span>,
+</p>
+<ol><li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathrm {join} \circ M(\mathrm {join} )=\mathrm {join} \circ \mathrm {join} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">j</mi>
+          <mi mathvariant="normal">o</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">n</mi>
+        </mrow>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">j</mi>
+          <mi mathvariant="normal">o</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">n</mi>
+        </mrow>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">j</mi>
+          <mi mathvariant="normal">o</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">n</mi>
+        </mrow>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">j</mi>
+          <mi mathvariant="normal">o</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">n</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathrm {join} \circ M(\mathrm {join} )=\mathrm {join} \circ \mathrm {join} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9aaad2d8beee3b38d5dbe0ed34dfb2dec864aeef" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; margin-left: -0.127ex; width:27.121ex; height:2.843ex;" alt="{\displaystyle \mathrm {join} \circ M(\mathrm {join} )=\mathrm {join} \circ \mathrm {join} }"></span></li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathrm {join} \circ M(\mathrm {unit} )=\mathrm {join} \circ \mathrm {unit} =\mathrm {id} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">j</mi>
+          <mi mathvariant="normal">o</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">n</mi>
+        </mrow>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">u</mi>
+          <mi mathvariant="normal">n</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">t</mi>
+        </mrow>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">j</mi>
+          <mi mathvariant="normal">o</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">n</mi>
+        </mrow>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">u</mi>
+          <mi mathvariant="normal">n</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">t</mi>
+        </mrow>
+        <mo>=</mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">d</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathrm {join} \circ M(\mathrm {unit} )=\mathrm {join} \circ \mathrm {unit} =\mathrm {id} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/514d91dea99e97edca45dd36b34f8cef350884a3" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; margin-left: -0.127ex; width:32.804ex; height:2.843ex;" alt="{\displaystyle \mathrm {join} \circ M(\mathrm {unit} )=\mathrm {join} \circ \mathrm {unit} =\mathrm {id} }"></span></li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathrm {unit} \circ f=M(f)\circ \mathrm {unit} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">u</mi>
+          <mi mathvariant="normal">n</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">t</mi>
+        </mrow>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>f</mi>
+        <mo>=</mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>f</mi>
+        <mo stretchy="false">)</mo>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">u</mi>
+          <mi mathvariant="normal">n</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">t</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathrm {unit} \circ f=M(f)\circ \mathrm {unit} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/866b3b0beb5c7e7f1f0e4e01beb12a2b772bab1f" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:22.57ex; height:2.843ex;" alt="{\displaystyle \mathrm {unit} \circ f=M(f)\circ \mathrm {unit} }"></span></li>
+<li><span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mathrm {join} \circ M(M(f))=M(f)\circ \mathrm {join} }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">j</mi>
+          <mi mathvariant="normal">o</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">n</mi>
+        </mrow>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>f</mi>
+        <mo stretchy="false">)</mo>
+        <mo stretchy="false">)</mo>
+        <mo>=</mo>
+        <mi>M</mi>
+        <mo stretchy="false">(</mo>
+        <mi>f</mi>
+        <mo stretchy="false">)</mo>
+        <mo>&#x2218;<!-- ∘ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi mathvariant="normal">j</mi>
+          <mi mathvariant="normal">o</mi>
+          <mi mathvariant="normal">i</mi>
+          <mi mathvariant="normal">n</mi>
+        </mrow>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mathrm {join} \circ M(M(f))=M(f)\circ \mathrm {join} }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/a490ad4608b3d1e66783138aa3395b165bc63838" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; margin-left: -0.127ex; width:30.554ex; height:2.843ex;" alt="{\displaystyle \mathrm {join} \circ M(M(f))=M(f)\circ \mathrm {join} }"></span></li></ol>
+<p>By now, the Haskell translations should be hopefully self-explanatory:
+</p>
+<ol><li><code>join . fmap join     = join . join</code></li>
+<li><code>join . fmap return   = join . return = id</code></li>
+<li><code>return . f           = fmap f . return</code></li>
+<li><code>join . fmap (fmap f) =  fmap f . join</code></li></ol>
+<p>(Remember that <code>fmap</code> is the part of a functor that acts on morphisms.) These laws seem a bit impenetrable at first, though. What on earth do these laws mean, and why should they be true for monads? Let’s explore the laws.
+</p>
+<h3><span class="mw-headline" id="The_first_law">The first law</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=10" title="Edit section: The first law" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=10" title="Edit section&#039;s source code: The first law"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><code>join . fmap join = join . join</code>
+</p>
+<figure class="mw-halign-right" typeof="mw:File/Frame"><a href="/wiki/File:Monad-law-1-lists.png" class="mw-file-description"><img src="//upload.wikimedia.org/wikipedia/commons/2/2f/Monad-law-1-lists.png" decoding="async" width="403" height="387" class="mw-file-element" data-file-width="403" data-file-height="387" /></a><figcaption>A demonstration of the first law for lists. Remember that <code>join</code> is <code>concat</code> and <code>fmap</code> is <code>map</code> in the list monad.</figcaption></figure>
+<p>In order to understand this law, we'll first use the example of lists. The first law mentions two functions, <code>join . fmap join</code> (the left-hand side) and <code>join . join</code> (the right-hand side). What will the types of these functions be? Remembering that <code>join</code>’s type is <code>[[a]] -&gt; [a]</code> (we’re talking just about lists for now), the types are both <code>[[[a]]] -&gt; [a]</code> (the fact that they’re the same is handy; after all, we’re trying to show they’re completely the same function!). So we have a list of lists of lists. The left-hand side, then, performs <code>fmap join</code> on this 3-layered list, then uses <code>join</code> on the result. <code>fmap</code> is just the familiar <code>map</code> for lists, so we first map across each of the list of lists inside the top-level list, concatenating them down into a list each. So afterward, we have a list of lists, which we then run through <code>join</code>. In summary, we 'enter' the top level, collapse the second and third levels down, then collapse this new level with the top level.
+</p><p>What about the right-hand side? We first run <code>join</code> on our list of list of lists. Although this is three layers, and you normally apply a two-layered list to <code>join</code>, this will still work, because a <code>[[[a]]]</code> is just <code>[[b]]</code>, where <code>b = [a]</code>, so in a sense, a three-layered list is just a two layered list, but rather than the last layer being 'flat', it is composed of another list. So if we apply our list of lists (of lists) to <code>join</code>, it will flatten those outer two layers into one. As the second layer wasn't flat but instead contained a third layer, we will still end up with a list of lists, which the other <code>join</code> flattens. Summing up, the left-hand side will flatten the inner two layers into a new layer, then flatten this with the outermost layer. The right-hand side will flatten the outer two layers, then flatten this with the innermost layer. These two operations should be equivalent. It’s sort of like a law of associativity for <code>join</code>.
+</p><p><code>Maybe</code> is also a monad, with
+</p>
+<pre>return&#160;:: a -&gt; Maybe a
+return x = Just x
+
+join&#160;:: Maybe (Maybe a) -&gt; Maybe a
+join Nothing         = Nothing
+join (Just Nothing)  = Nothing
+join (Just (Just x)) = Just x
+</pre>
+<p>So if we had a <i>three</i>-layered Maybe (i.e., it could be <code>Nothing</code>, <code>Just Nothing</code>, <code>Just (Just Nothing)</code> or <code>Just (Just (Just x))</code>), the first law says that collapsing the inner two layers first, then that with the outer layer is exactly the same as collapsing the outer layers first, then that with the innermost layer. 
+</p>
+<table style="margin-left: auto; margin-right: auto; width: 70ex; background: transparent; border: 1px solid #aaa; padding: 0.5em;"><tbody><tr>
+<th>Exercises </th></tr>
+<tr><td>
+Verify that the list and Maybe monads do in fact obey this law with some examples to see precisely how the layer flattening works.</td>
+</tr></tbody></table>
+<h3><span class="mw-headline" id="The_second_law">The second law</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=11" title="Edit section: The second law" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=11" title="Edit section&#039;s source code: The second law"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><code>join . fmap return = join . return = id</code>
+</p><p>What about the second law, then? Again, we'll start with the example of lists. Both functions mentioned in the second law are functions <code>[a] -&gt; [a]</code>. The left-hand side expresses a function that maps over the list, turning each element <code>x</code> into its singleton list <code>[x]</code>, so that at the end we’re left with a list of singleton lists. This two-layered list is flattened down into a single-layer list again using the <code>join</code>. The right hand side, however, takes the entire list <code>[x, y, z, ...]</code>, turns it into the singleton list of lists <code>[[x, y, z, ...]]</code>, then flattens the two layers down into one again. This law is less obvious to state quickly, but it essentially says that applying <code>return</code> to a monadic value, then <code>join</code>ing the result should have the same effect whether you perform the <code>return</code> from inside the top layer or from outside it.
+</p>
+<table style="margin-left: auto; margin-right: auto; width: 70ex; background: transparent; border: 1px solid #aaa; padding: 0.5em;"><tbody><tr>
+<th>Exercises </th></tr>
+<tr><td>
+Prove this second law for the Maybe monad.</td>
+</tr></tbody></table>
+<h3><span class="mw-headline" id="The_third_and_fourth_laws">The third and fourth laws</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=12" title="Edit section: The third and fourth laws" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=12" title="Edit section&#039;s source code: The third and fourth laws"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h3>
+<p><code>return . f = fmap f . return</code>
+</p><p><code>join . fmap (fmap f) = fmap f . join</code>
+</p><p>The last two laws express more self-evident facts about how we expect monads to behave. The easiest way to see how they are true is to expand them to use the expanded form:
+</p>
+<ol><li><code>\x -&gt; return (f x)  =  \x -&gt; fmap f (return x)</code></li>
+<li><code>\x -&gt; join (fmap (fmap f) x)  =  \x -&gt; fmap f (join x)</code></li></ol>
+<table style="margin-left: auto; margin-right: auto; width: 70ex; background: transparent; border: 1px solid #aaa; padding: 0.5em;"><tbody><tr>
+<th>Exercises </th></tr>
+<tr><td>
+Convince yourself that these laws should hold true for any monad by exploring what they mean, in a similar style to how we explained the first and second laws.</td>
+</tr></tbody></table>
+<h3><span class="mw-headline" id="Application_to_do-blocks">Application to do-blocks</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=13" title="Edit section: Application to do-blocks" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=13" title="Edit section&#039;s source code: Application to do-blocks"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>Well, we have intuitive statements about the laws that a monad must support, but why is that important? The answer becomes obvious when we consider do-blocks. Recall that a do-block is just syntactic sugar for a combination of statements involving <code>(&gt;&gt;=)</code> as witnessed by the usual translation:
+</p>
+<pre>do { x }                 --&gt;  x
+do { let { y = v }; x }  --&gt;  let y = v in do { x }
+do { v &lt;- y; x }         --&gt;  y &gt;&gt;= \v -&gt; do { x }
+do { y; x }              --&gt;  y &gt;&gt;= \_ -&gt; do { x }
+</pre>
+<p>Also notice that we can prove what are normally quoted as the monad laws using <code>return</code> and <code>(&gt;&gt;=)</code> from our above laws (the proofs are a little heavy in some cases, feel free to skip them if you want to):
+</p>
+<ol><li>
+
+<code>return x &gt;&gt;= f  =  f x</code>. Proof:
+<pre>   return x &gt;&gt;= f
+ = join (fmap f (return x)) -- By the definition of (&gt;&gt;=)
+ = join (return (f x))      -- By law 3
+ = (join . return) (f x)
+ = id (f x)                 -- By law 2
+ = f x
+</pre>
+</li><li>
+
+<code>m &gt;&gt;= return  =  m</code>. Proof:
+<pre>   m &gt;&gt;= return
+ = join (fmap return m)    -- By the definition of (&gt;&gt;=)
+ = (join . fmap return) m
+ = id m                    -- By law 2
+ = m
+</pre>
+</li><li>
+
+<code>(m &gt;&gt;= f) &gt;&gt;= g  =  m &gt;&gt;= (\x -&gt; f x &gt;&gt;= g)</code>. Proof (recall that <code>fmap f . fmap g = fmap (f . g)</code>):
+<pre>   (m &gt;&gt;= f) &gt;&gt;= g
+ = (join (fmap f m)) &gt;&gt;= g                          -- By the definition of (&gt;&gt;=)
+ = join (fmap g (join (fmap f m)))                  -- By the definition of (&gt;&gt;=)
+ = (join . fmap g) (join (fmap f m))
+ = (join . fmap g . join) (fmap f m)
+ = (join . join . fmap (fmap g)) (fmap f m)         -- By law 4
+ = (join . join . fmap (fmap g) . fmap f) m
+ = (join . join . fmap (fmap g . f)) m              -- By the distributive law of functors
+ = (join . join . fmap (\x -&gt; fmap g (f x))) m
+ = (join . fmap join . fmap (\x -&gt; fmap g (f x))) m -- By law 1
+ = (join . fmap (join . (\x -&gt; fmap g (f x)))) m    -- By the distributive law of functors
+ = (join . fmap (\x -&gt; join (fmap g (f x)))) m
+ = (join . fmap (\x -&gt; f x &gt;&gt;= g)) m                -- By the definition of (&gt;&gt;=)
+ = join (fmap (\x -&gt; f x &gt;&gt;= g) m)
+ = m &gt;&gt;= (\x -&gt; f x &gt;&gt;= g)                          -- By the definition of (&gt;&gt;=)
+</pre>
+</li></ol>
+<p>These new monad laws, using <code>return</code> and <code>(&gt;&gt;=)</code>, can be translated into do-block notation.
+</p>
+<table class="wikitable" style="margin: 1em auto">
+
+<tbody><tr>
+<th>Points-free style
+</th>
+<th>Do-block style
+</th></tr>
+
+<tr>
+<td><code>return x &gt;&gt;= f = f x</code>
+</td>
+<td><code>do { v &lt;- return x; f v } = do { f x }</code>
+</td></tr>
+
+<tr>
+<td><code>m &gt;&gt;= return = m</code>
+</td>
+<td><code>do { v &lt;- m; return v } = do { m }</code>
+</td></tr>
+
+<tr>
+<td><code>(m &gt;&gt;= f) &gt;&gt;= g = m &gt;&gt;= (\x -&gt; f x &gt;&gt;= g)</code>
+</td>
+<td>
+<pre>   do { y &lt;- do { x &lt;- m; f x };
+        g y }
+ =
+   do { x &lt;- m;
+        y &lt;- f x;
+        g y }
+</pre>
+</td></tr></tbody></table>
+<p>The monad laws are now common-sense statements about how do-blocks should function. If one of these laws were invalidated, users would become confused, as you couldn't be able to manipulate things within the do-blocks as would be expected. The monad laws are, in essence, usability guidelines.
+</p>
+<table style="margin-left: auto; margin-right: auto; width: 70ex; background: transparent; border: 1px solid #aaa; padding: 0.5em;"><tbody><tr>
+<th>Exercises </th></tr>
+<tr><td>
+<p>In fact, the two versions of the laws we gave:
+</p>
+<pre>-- Categorical:
+join . fmap join = join . join
+join . fmap return = join . return = id
+return . f = fmap f . return
+join . fmap (fmap f) = fmap f . join
+
+-- Functional:
+m &gt;&gt;= return = m
+return m &gt;&gt;= f = f m
+(m &gt;&gt;= f) &gt;&gt;= g = m &gt;&gt;= (\x -&gt; f x &gt;&gt;= g)
+</pre>
+<p>are entirely equivalent. We showed that we can recover the functional laws from the categorical ones. Go the other way; show that starting from the functional laws, the categorical laws hold. It may be useful to remember the following definitions:
+</p>
+<pre>join m = m &gt;&gt;= id
+fmap f m = m &gt;&gt;= return . f
+</pre>
+Thanks to Yitzchak Gale for suggesting this exercise.</td>
+</tr></tbody></table>
+<h2><span class="mw-headline" id="Summary">Summary</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit&amp;section=14" title="Edit section: Summary" class="mw-editsection-visualeditor"><span>edit</span></a><span class="mw-editsection-divider"> | </span><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit&amp;section=14" title="Edit section&#039;s source code: Summary"><span>edit source</span></a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>We've come a long way in this chapter. We've looked at what categories are and how they apply to Haskell. We've introduced the basic concepts of category theory including functors, as well as some more advanced topics like monads, and seen how they're crucial to idiomatic Haskell. We haven't covered some of the basic category theory that wasn't needed for our aims, like natural transformations, but have instead provided an intuitive feel for the categorical grounding behind Haskell's structures.
+</p>
+<h2><span class="mw-headline" id="Notes">Notes</span></h2>
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><a href="#cite_ref-1">↑</a></span> <span class="reference-text">Actually, there is a subtlety here: because <code>(.)</code> is a lazy function, if <code>f</code> is <code>undefined</code>, we have that <code>id . f = \_ -&gt; ⊥</code>. Now, while this may seem equivalent to <code>⊥</code> for all intents and purposes, you can actually tell them apart using the strictifying function <code>seq</code>, meaning that the last category law is broken. We can define a new strict composition function, <code>f .! g = ((.) $! f) $! g</code>, that makes <b>Hask</b> a category. We proceed by using the normal <code>(.)</code>, though, and attribute any discrepancies to the fact that <code>seq</code> breaks an awful lot of the nice language properties anyway.</span>
+</li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><a href="#cite_ref-2">↑</a></span> <span class="reference-text">Experienced category theorists will notice that we're simplifying things a bit here; instead of presenting <i>unit</i> and <i>join</i> as natural transformations, we treat them explicitly as morphisms, and require naturality as extra axioms alongside the <a href="#The_third_and_fourth_laws">standard monad laws (laws 3 and 4)</a>. The reasoning is simplicity; we are not trying to teach category theory as a whole, simply give a categorical background to some of the structures in Haskell. You may also notice that we are giving these morphisms names suggestive of their Haskell analogues, because the names <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \eta }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>&#x03B7;<!-- η --></mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \eta }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/e4d701857cf5fbec133eebaf94deadf722537f64" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:1.169ex; height:2.176ex;" alt="{\displaystyle \eta }"></span> and <span class="mwe-math-element"><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle \mu }">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mi>&#x03BC;<!-- μ --></mi>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle \mu }</annotation>
+  </semantics>
+</math></span><img src="https://wikimedia.org/api/rest_v1/media/math/render/svg/9fd47b2a39f7a7856952afec1f1db72c67af6161" class="mwe-math-fallback-image-inline mw-invert" aria-hidden="true" style="vertical-align: -0.838ex; width:1.402ex; height:2.176ex;" alt="{\displaystyle \mu }"></span> don’t provide much intuition.</span>
+</li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><a href="#cite_ref-3">↑</a></span> <span class="reference-text">This is perhaps due to the fact that Haskell programmers like to think of monads as a way of sequencing computations with a common feature, whereas in category theory the container aspect of the various structures is emphasised. <code>join</code> pertains naturally to containers (squashing two layers of a container down into one), but <code>(&gt;&gt;=)</code> is the natural sequencing operation (do something, feeding its results into something else).</span>
+</li>
+<li id="cite_note-4"><span class="mw-cite-backlink"><a href="#cite_ref-4">↑</a></span> <span class="reference-text">If you can prove that certain laws hold, which we'll explore in the next section.</span>
+</li>
+</ol>
+<div class="noprint">
+<div style="text-align:center; margin:1em; display:table; margin:0 auto;"><div style="padding:0.75em;">
+<table cellpadding="1" style="border: 1px solid #8888aa; background: #f7f8ff; padding: 5px; font-size: 95%; margin: 0 15px 0 15px;">
+<tbody><tr>
+<td style="background: #ccf; text-align: center;"><b>Category theory</b>
+</td></tr>
+<tr>
+<td style="text-align:center"><a href="/wiki/Haskell/Solutions/Category_theory" title="Haskell/Solutions/Category theory">Solutions to exercises</a>
+</td></tr>
+<tr>
+<td style="background: #ccf; text-align: center;"><b>Wider Theory</b>
+</td></tr>
+<tr>
+<td style="text-align:center">
+<p><a href="/wiki/Haskell/Denotational_semantics" title="Haskell/Denotational semantics">Denotational semantics</a> <span class="noprint"><span typeof="mw:File"><a href="/wiki/Help:Development_stages" title="75% developed"><img alt="75% developed" src="//upload.wikimedia.org/wikipedia/commons/thumb/6/62/75_percent.svg/9px-75_percent.svg.png" decoding="async" width="9" height="9" class="mw-file-element" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/6/62/75_percent.svg/14px-75_percent.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/6/62/75_percent.svg/18px-75_percent.svg.png 2x" data-file-width="9" data-file-height="9" /></a></span></span>
+&#160;&gt;&gt;&#160;<a href="/w/index.php?title=Haskell/Equational_reasoning&amp;action=edit&amp;redlink=1" class="new" title="Haskell/Equational reasoning (does not exist)">Equational reasoning</a>
+&#160;&gt;&gt;&#160;<a href="/w/index.php?title=Haskell/Program_derivation&amp;action=edit&amp;redlink=1" class="new" title="Haskell/Program derivation (does not exist)">Program derivation</a>
+&#160;&gt;&gt;&#160;<a class="mw-selflink selflink">Category theory</a>
+&#160;&gt;&gt;&#160;<a href="/wiki/Haskell/The_Curry%E2%80%93Howard_isomorphism" title="Haskell/The Curry–Howard isomorphism">The Curry–Howard isomorphism</a>
+&#160;&gt;&gt;&#160;<a href="/wiki/Haskell/Fix_and_recursion" title="Haskell/Fix and recursion">fix and recursion</a>
+</p>
+<div style="clear:both;"><small class="noprint"><a class="external text" href="https://en.wikibooks.org/w/index.php?title=Template:Haskell_chapter/Wider_Theory&amp;action=edit">edit this chapter</a>
+</small></div>
+<p><br />
+</p>
+</td></tr>
+<tr>
+<td style="background: #ccf; text-align: center;"><b><a href="/wiki/Haskell" title="Haskell">Haskell</a></b>
+</td></tr>
+<tr>
+<td style="text-align:center">
+<p><a href="/wiki/Haskell/Haskell_Basics" class="mw-redirect" title="Haskell/Haskell Basics">Haskell Basics</a>
+&gt;&gt; <a href="/wiki/Haskell/Elementary_Haskell" class="mw-redirect" title="Haskell/Elementary Haskell">Elementary Haskell</a>
+&gt;&gt; <a href="/wiki/Haskell/Intermediate_Haskell" class="mw-redirect" title="Haskell/Intermediate Haskell">Intermediate Haskell</a>
+&gt;&gt; <a href="/wiki/Haskell/Monads" class="mw-redirect" title="Haskell/Monads">Monads</a><br />
+<a href="/wiki/Haskell/Advanced_Haskell" class="mw-redirect" title="Haskell/Advanced Haskell">Advanced Haskell</a>
+&gt;&gt; <a href="/wiki/Haskell/Fun_with_Types" class="mw-redirect" title="Haskell/Fun with Types">Fun with Types</a>
+&gt;&gt; <a href="/wiki/Haskell/Wider_Theory" class="mw-redirect" title="Haskell/Wider Theory">Wider Theory</a>
+&gt;&gt; <a href="/wiki/Haskell/Haskell_Performance" class="mw-redirect" title="Haskell/Haskell Performance">Haskell Performance</a><br />
+</p>
+<hr />
+<p><a href="/wiki/Haskell/Libraries_Reference" class="mw-redirect" title="Haskell/Libraries Reference">Libraries Reference</a>
+&gt;&gt; <a href="/wiki/Haskell/General_Practices" class="mw-redirect" title="Haskell/General Practices">General Practices</a>
+&gt;&gt; <a href="/wiki/Haskell/Specialised_Tasks" class="mw-redirect" title="Haskell/Specialised Tasks">Specialised Tasks</a>
+</p>
+<div style="float:right;" class="noprint"><small><a class="external text" href="https://en.wikibooks.org/w/index.php?title=Template:Haskell/Navigation&amp;action=edit">edit book structure</a></small></div>
+</td></tr></tbody></table>
+</div></div>
+</div>
+
+<!-- 
+NewPP limit report
+Parsed by mw‐web.eqiad.main‐55b8c76fd7‐b62d2
+Cached time: 20240504013615
+Cache expiry: 2592000
+Reduced expiry: false
+Complications: [show‐toc]
+CPU time usage: 0.175 seconds
+Real time usage: 0.332 seconds
+Preprocessor visited node count: 1014/1000000
+Post‐expand include size: 9248/2097152 bytes
+Template argument size: 2451/2097152 bytes
+Highest expansion depth: 12/100
+Expensive parser function count: 0/500
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 7584/5000000 bytes
+Lua time usage: 0.016/10.000 seconds
+Lua memory usage: 1052528/52428800 bytes
+Number of Wikibase entities loaded: 0/400
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   75.273      1 -total
+ 47.31%   35.612      1 Template:Haskell_navigation
+ 42.98%   32.352      2 Template:BookCat
+ 19.43%   14.622      1 Template:Haskell_minitoc
+ 15.12%   11.384      2 Template:Haskell_chapter/Wider_Theory
+ 12.59%    9.478      2 Template:Evalx
+ 12.58%    9.467      1 Template:Haskell/Interlanguage
+  4.90%    3.689      1 Template:Haskell/NotesSection
+  4.36%    3.284      2 Template:Haskell_chapter_navbar
+  3.33%    2.510      2 Template:BOOKCATEGORY
+-->
+
+<!-- Saved in parser cache with key enwikibooks:pcache:idhash:107278-0!canonical and timestamp 20240504013615 and revision id 4080311. Rendering was triggered because: page-view
+ -->
+</div><!--esi <esi:include src="/esitest-fa8a495983347898/content" /> --><noscript><img src="https://login.wikimedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" width="1" height="1" style="border: none; position: absolute;"></noscript>
+<div class="printfooter" data-nosnippet="">Retrieved from "<a dir="ltr" href="https://en.wikibooks.org/w/index.php?title=Haskell/Category_theory&amp;oldid=4080311">https://en.wikibooks.org/w/index.php?title=Haskell/Category_theory&amp;oldid=4080311</a>"</div></div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/wiki/Category:Book:Haskell" title="Category:Book:Haskell">Book:Haskell</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		
+<nav id="p-personal" class="mw-portlet mw-portlet-personal vector-user-menu-legacy vector-menu" aria-labelledby="p-personal-label" role="navigation"  >
+	<h3
+		id="p-personal-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Personal tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="pt-anonuserpage" class="mw-list-item"><span title="The user page for the IP address you are editing as">Not logged in</span></li><li id="pt-anontalk" class="mw-list-item"><a href="/wiki/Special:MyTalk" title="Discussion about edits from this IP address [n]" accesskey="n"><span>Discussion for this IP address</span></a></li><li id="pt-anoncontribs" class="mw-list-item"><a href="/wiki/Special:MyContributions" title="A list of edits made from this IP address [y]" accesskey="y"><span>Contributions</span></a></li><li id="pt-createaccount" class="mw-list-item"><a href="/w/index.php?title=Special:CreateAccount&amp;returnto=Haskell%2FCategory+theory" title="You are encouraged to create an account and log in; however, it is not mandatory"><span>Create account</span></a></li><li id="pt-login" class="mw-list-item"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Haskell%2FCategory+theory" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o"><span>Log in</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+		<div id="left-navigation">
+			
+<nav id="p-namespaces" class="mw-portlet mw-portlet-namespaces vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-namespaces-label" role="navigation"  >
+	<h3
+		id="p-namespaces-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Namespaces</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-nstab-main" class="selected mw-list-item"><a href="/wiki/Haskell/Category_theory" title="View the content page [c]" accesskey="c"><span>Book</span></a></li><li id="ca-talk" class="mw-list-item"><a href="/wiki/Talk:Haskell/Category_theory" rel="discussion" title="Discussion about the content page [t]" accesskey="t"><span>Discussion</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-variants" class="mw-portlet mw-portlet-variants emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-variants-label" role="navigation"  >
+	<input type="checkbox"
+		id="p-variants-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-variants"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-variants-label"
+	>
+	<label
+		id="p-variants-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">English</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+		</div>
+		<div id="right-navigation">
+			
+<nav id="p-views" class="mw-portlet mw-portlet-views vector-menu-tabs vector-menu-tabs-legacy vector-menu" aria-labelledby="p-views-label" role="navigation"  >
+	<h3
+		id="p-views-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Views</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="ca-view" class="selected mw-list-item"><a href="/wiki/Haskell/Category_theory"><span>Read</span></a></li><li id="ca-ve-edit" class="mw-list-item"><a href="/w/index.php?title=Haskell/Category_theory&amp;veaction=edit" title="Edit this page [v]" accesskey="v"><span>Edit</span></a></li><li id="ca-edit" class="collapsible mw-list-item"><a href="/w/index.php?title=Haskell/Category_theory&amp;action=edit" title="Edit the source code of this page [e]" accesskey="e"><span>Edit source</span></a></li><li id="ca-history" class="mw-list-item"><a href="/w/index.php?title=Haskell/Category_theory&amp;action=history" title="Past revisions of this page [h]" accesskey="h"><span>View history</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<nav id="p-cactions" class="mw-portlet mw-portlet-cactions emptyPortlet vector-menu-dropdown vector-menu" aria-labelledby="p-cactions-label" role="navigation"  title="More options" >
+	<input type="checkbox"
+		id="p-cactions-checkbox"
+		role="button"
+		aria-haspopup="true"
+		data-event-name="ui.dropdown-p-cactions"
+		class="vector-menu-checkbox"
+		aria-labelledby="p-cactions-label"
+	>
+	<label
+		id="p-cactions-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">More</span>
+	</label>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			
+		</ul>
+		
+	</div>
+</nav>
+
+			
+<div id="p-search" role="search" class="vector-search-box-vue  vector-search-box-show-thumbnail vector-search-box-auto-expand-width vector-search-box">
+	<h3 >Search</h3>
+	<form action="/w/index.php" id="searchform" class="vector-search-box-form">
+		<div id="simpleSearch"
+			class="vector-search-box-inner"
+			 data-search-loc="header-navigation">
+			<input class="vector-search-box-input"
+				 type="search" name="search" placeholder="Search Wikibooks" aria-label="Search Wikibooks" autocapitalize="sentences" title="Search Wikibooks [f]" accesskey="f" id="searchInput"
+			>
+			<input type="hidden" name="title" value="Special:Search">
+			<input id="mw-searchButton"
+				 class="searchButton mw-fallbackSearchButton" type="submit" name="fulltext" title="Search the pages for this text" value="Search">
+			<input id="searchButton"
+				 class="searchButton" type="submit" name="go" title="Go to a page with this exact name if it exists" value="Go">
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel" class="vector-legacy-sidebar">
+	<div id="p-logo" role="banner">
+		<a class="mw-wiki-logo" href="/wiki/Main_Page"
+			title="Visit the main page"></a>
+	</div>
+	
+<nav id="p-navigation" class="mw-portlet mw-portlet-navigation vector-menu-portal portal vector-menu" aria-labelledby="p-navigation-label" role="navigation"  >
+	<h3
+		id="p-navigation-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Navigation</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-mainpage" class="mw-list-item"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z"><span>Main Page</span></a></li><li id="n-help" class="mw-list-item"><a href="/wiki/Help:Contents" title="Find help on how to use and edit Wikibooks"><span>Help</span></a></li><li id="n-Browse" class="mw-list-item"><a href="/wiki/Wikibooks:Card_Catalog_Office" title="Check out what Wikibooks has to offer"><span>Browse</span></a></li><li id="n-Cookbook" class="mw-list-item"><a href="/wiki/Cookbook:Table_of_Contents" title="Learn recipes from around the world"><span>Cookbook</span></a></li><li id="n-Wikijunior" class="mw-list-item"><a href="/wiki/Wikijunior" title="Books for children"><span>Wikijunior</span></a></li><li id="n-Featured-books" class="mw-list-item"><a href="/wiki/Wikibooks:Featured_books" title="The best of Wikibooks"><span>Featured books</span></a></li><li id="n-recentchanges" class="mw-list-item"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r"><span>Recent changes</span></a></li><li id="n-sitesupport" class="mw-list-item"><a href="/wiki///donate.wikimedia.org/wiki/Special:FundraiserRedirector%3Futm_source%3Ddonate%26utm_medium%3Dsidebar%26utm_campaign%3DC13_en.wikibooks.org%26uselang%3Den" title="Support Wikibooks"><span>Donations</span></a></li><li id="n-randomrootpage" class="mw-list-item"><a href="/wiki/Special:RandomInCategory/Book:Wikibooks_Stacks/Books"><span>Random book</span></a></li><li id="n-Using-Wikibooks" class="mw-list-item"><a href="/wiki/Using_Wikibooks"><span>Using Wikibooks</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-community" class="mw-portlet mw-portlet-community vector-menu-portal portal vector-menu" aria-labelledby="p-community-label" role="navigation"  >
+	<h3
+		id="p-community-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Community</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-Reading-room-forum" class="mw-list-item"><a href="/wiki/Wikibooks:Reading_room"><span>Reading room forum</span></a></li><li id="n-portal" class="mw-list-item"><a href="/wiki/Wikibooks:Community_Portal" title="Find your way around the Wikibooks community"><span>Community portal</span></a></li><li id="n-currentevents" class="mw-list-item"><a href="/wiki/Wikibooks:Reading_room/Bulletin_Board" title="Important community news"><span>Bulletin Board</span></a></li><li id="n-maintenance" class="mw-list-item"><a href="/wiki/Wikibooks:Maintenance" title="Frequent tasks that you can help with"><span>Help out!</span></a></li><li id="n-Policies-and-guidelines" class="mw-list-item"><a href="/wiki/Wikibooks:Policies_and_guidelines" title="Pages detailing important rules and procedures"><span>Policies and guidelines</span></a></li><li id="n-contact" class="mw-list-item"><a href="/wiki/Wikibooks:Contact_us" title="Alternative methods of communication"><span>Contact us</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-tb" class="mw-portlet mw-portlet-tb vector-menu-portal portal vector-menu" aria-labelledby="p-tb-label" role="navigation"  >
+	<h3
+		id="p-tb-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Tools</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="t-whatlinkshere" class="mw-list-item"><a href="/wiki/Special:WhatLinksHere/Haskell/Category_theory" title="A list of all wiki pages that link here [j]" accesskey="j"><span>What links here</span></a></li><li id="t-recentchangeslinked" class="mw-list-item"><a href="/wiki/Special:RecentChangesLinked/Haskell/Category_theory" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k"><span>Related changes</span></a></li><li id="t-upload" class="mw-list-item"><a href="//commons.wikimedia.org/wiki/Special:UploadWizard?uselang=en" title="Upload files [u]" accesskey="u"><span>Upload file</span></a></li><li id="t-specialpages" class="mw-list-item"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q"><span>Special pages</span></a></li><li id="t-permalink" class="mw-list-item"><a href="/w/index.php?title=Haskell/Category_theory&amp;oldid=4080311" title="Permanent link to this revision of this page"><span>Permanent link</span></a></li><li id="t-info" class="mw-list-item"><a href="/w/index.php?title=Haskell/Category_theory&amp;action=info" title="More information about this page"><span>Page information</span></a></li><li id="t-cite" class="mw-list-item"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Haskell%2FCategory_theory&amp;id=4080311&amp;wpFormIdentifier=titleform" title="Information on how to cite this page"><span>Cite this page</span></a></li><li id="t-urlshortener" class="mw-list-item"><a href="/w/index.php?title=Special:UrlShortener&amp;url=https%3A%2F%2Fen.wikibooks.org%2Fwiki%2FHaskell%2FCategory_theory"><span>Get shortened URL</span></a></li><li id="t-urlshortener-qrcode" class="mw-list-item"><a href="/w/index.php?title=Special:QrCode&amp;url=https%3A%2F%2Fen.wikibooks.org%2Fwiki%2FHaskell%2FCategory_theory"><span>Download QR code</span></a></li><li id="t-wikibase" class="mw-list-item"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q63285881" title="Link to connected data repository item [g]" accesskey="g"><span>Wikidata item</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-sister_projects" class="mw-portlet mw-portlet-sister_projects vector-menu-portal portal vector-menu" aria-labelledby="p-sister_projects-label" role="navigation"  >
+	<h3
+		id="p-sister_projects-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Sister projects</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="n-Wikipedia" class="mw-list-item"><a href="https://en.wikipedia.org/wiki/Main_Page"><span>Wikipedia</span></a></li><li id="n-Wikiversity" class="mw-list-item"><a href="https://en.wikiversity.org/wiki/Wikiversity:Main_Page"><span>Wikiversity</span></a></li><li id="n-Wiktionary" class="mw-list-item"><a href="https://en.wiktionary.org/wiki/Wiktionary:Main_Page"><span>Wiktionary</span></a></li><li id="n-Wikiquote" class="mw-list-item"><a href="https://en.wikiquote.org/wiki/Main_Page"><span>Wikiquote</span></a></li><li id="n-Wikisource" class="mw-list-item"><a href="https://en.wikisource.org/wiki/Main_Page"><span>Wikisource</span></a></li><li id="n-Wikinews" class="mw-list-item"><a href="https://en.wikinews.org/wiki/Main_Page"><span>Wikinews</span></a></li><li id="n-Wikivoyage" class="mw-list-item"><a href="https://en.wikivoyage.org/wiki/Main_Page"><span>Wikivoyage</span></a></li><li id="n-Commons" class="mw-list-item"><a href="https://commons.wikimedia.org/wiki/Main_Page"><span>Commons</span></a></li><li id="n-Wikidata" class="mw-list-item"><a href="https://www.wikidata.org/wiki/Wikidata:Main_Page"><span>Wikidata</span></a></li><li id="n-MediaWiki" class="mw-list-item"><a href="https://www.mediawiki.org/wiki/Main_Page"><span>MediaWiki</span></a></li><li id="n-Meta-Wiki" class="mw-list-item"><a href="https://meta.wikimedia.org/wiki/Main_Page"><span>Meta-Wiki</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+<nav id="p-coll-print_export" class="mw-portlet mw-portlet-coll-print_export vector-menu-portal portal vector-menu" aria-labelledby="p-coll-print_export-label" role="navigation"  >
+	<h3
+		id="p-coll-print_export-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">Print/export</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li id="coll-create_a_book" class="mw-list-item"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Haskell%2FCategory+theory"><span>Create a collection</span></a></li><li id="coll-download-as-rl" class="mw-list-item"><a href="/w/index.php?title=Special:DownloadAsPdf&amp;page=Haskell%2FCategory_theory&amp;action=show-download-screen"><span>Download as PDF</span></a></li><li id="t-print" class="mw-list-item"><a href="/w/index.php?title=Haskell/Category_theory&amp;printable=yes" title="Printable version of this page [p]" accesskey="p"><span>Printable version</span></a></li>
+		</ul>
+		
+	</div>
+</nav>
+
+	
+<nav id="p-lang" class="mw-portlet mw-portlet-lang vector-menu-portal portal vector-menu" aria-labelledby="p-lang-label" role="navigation"  >
+	<h3
+		id="p-lang-label"
+		
+		class="vector-menu-heading "
+	>
+		<span class="vector-menu-heading-label">In other languages</span>
+	</h3>
+	<div class="vector-menu-content">
+		
+		<ul class="vector-menu-content-list">
+			
+			<li class="interlanguage-link interwiki-ja mw-list-item"><a href="https://ja.wikibooks.org/wiki/Haskell/%E5%9C%8F%E8%AB%96" title="Haskell/圏論 – Japanese" lang="ja" hreflang="ja" class="interlanguage-link-target"><span>日本語</span></a></li><li class="interlanguage-link interwiki-zh mw-list-item"><a href="https://zh.wikibooks.org/wiki/Haskell/%E8%8C%83%E7%95%B4%E8%AE%BA" title="Haskell/范畴论 – Chinese" lang="zh" hreflang="zh" class="interlanguage-link-target"><span>中文</span></a></li>
+		</ul>
+		<div class="after-portlet after-portlet-lang"><span class="wb-langlinks-edit wb-langlinks-link"><a href="https://www.wikidata.org/wiki/Special:EntityPage/Q63285881#sitelinks-wikibooks" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>
+	</div>
+</nav>
+
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info">
+	<li id="footer-info-lastmod"> This page was last edited on 27 June 2022, at 09:57.</li>
+	<li id="footer-info-copyright">Text is available under the <a href="//creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike License</a>; additional terms may apply. By using this site, you agree to the <a href="//foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Terms_of_Use">Terms of Use</a> and <a href="//foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy">Privacy Policy.</a></li>
+</ul>
+
+	<ul id="footer-places">
+	<li id="footer-places-privacy"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Privacy_policy">Privacy policy</a></li>
+	<li id="footer-places-about"><a href="/wiki/Wikibooks:Welcome">About Wikibooks</a></li>
+	<li id="footer-places-disclaimers"><a href="/wiki/Wikibooks:General_disclaimer">Disclaimers</a></li>
+	<li id="footer-places-wm-codeofconduct"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Universal_Code_of_Conduct">Code of Conduct</a></li>
+	<li id="footer-places-developers"><a href="https://developer.wikimedia.org">Developers</a></li>
+	<li id="footer-places-statslink"><a href="https://stats.wikimedia.org/#/en.wikibooks.org">Statistics</a></li>
+	<li id="footer-places-cookiestatement"><a href="https://foundation.wikimedia.org/wiki/Special:MyLanguage/Policy:Cookie_statement">Cookie statement</a></li>
+	<li id="footer-places-mobileview"><a href="//en.m.wikibooks.org/w/index.php?title=Haskell/Category_theory&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+</ul>
+
+	<ul id="footer-icons" class="noprint">
+	<li id="footer-copyrightico"><a href="https://wikimediafoundation.org/"><img src="/static/images/footer/wikimedia-button.png" srcset="/static/images/footer/wikimedia-button-1.5x.png 1.5x, /static/images/footer/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation" loading="lazy" /></a></li>
+	<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/static/images/footer/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/footer/poweredby_mediawiki_132x47.png 1.5x, /static/images/footer/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"></a></li>
+</ul>
+
+</footer>
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgHostname":"mw-web.codfw.main-6cf7c47dd7-5pc7m","wgBackendResponseTime":146,"wgPageParseReport":{"limitreport":{"cputime":"0.175","walltime":"0.332","ppvisitednodes":{"value":1014,"limit":1000000},"postexpandincludesize":{"value":9248,"limit":2097152},"templateargumentsize":{"value":2451,"limit":2097152},"expansiondepth":{"value":12,"limit":100},"expensivefunctioncount":{"value":0,"limit":500},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":7584,"limit":5000000},"entityaccesscount":{"value":0,"limit":400},"timingprofile":["100.00%   75.273      1 -total"," 47.31%   35.612      1 Template:Haskell_navigation"," 42.98%   32.352      2 Template:BookCat"," 19.43%   14.622      1 Template:Haskell_minitoc"," 15.12%   11.384      2 Template:Haskell_chapter/Wider_Theory"," 12.59%    9.478      2 Template:Evalx"," 12.58%    9.467      1 Template:Haskell/Interlanguage","  4.90%    3.689      1 Template:Haskell/NotesSection","  4.36%    3.284      2 Template:Haskell_chapter_navbar","  3.33%    2.510      2 Template:BOOKCATEGORY"]},"scribunto":{"limitreport-timeusage":{"value":"0.016","limit":"10.000"},"limitreport-memusage":{"value":1052528,"limit":52428800}},"cachereport":{"origin":"mw-web.eqiad.main-55b8c76fd7-b62d2","timestamp":"20240504013615","ttl":2592000,"transientcontent":false}}});});</script>
+<script type="application/ld+json">{"@context":"https:\/\/schema.org","@type":"Article","name":"Haskell\/Category theory","url":"https:\/\/en.wikibooks.org\/wiki\/Haskell\/Category_theory","sameAs":"http:\/\/www.wikidata.org\/entity\/Q63285881","mainEntity":"http:\/\/www.wikidata.org\/entity\/Q63285881","author":{"@type":"Organization","name":"Contributors to Wikimedia projects"},"publisher":{"@type":"Organization","name":"Wikimedia Foundation, Inc.","logo":{"@type":"ImageObject","url":"https:\/\/www.wikimedia.org\/static\/images\/wmf-hor-googpub.png"}},"datePublished":"2007-01-10T17:46:29Z","dateModified":"2022-06-27T09:57:36Z"}</script>
+</body>
+</html>

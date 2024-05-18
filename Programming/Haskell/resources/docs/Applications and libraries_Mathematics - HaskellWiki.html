@@ -1,0 +1,506 @@
+
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>Applications and libraries/Mathematics - HaskellWiki</title>
+<script>document.documentElement.className="client-js";RLCONF={"wgBreakFrames":!1,"wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgRequestId":"bcb4a3ea3317599631b9590a","wgCSPNonce":!1,"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Applications_and_libraries/Mathematics","wgTitle":"Applications and libraries/Mathematics","wgCurRevisionId":66633,"wgRevisionId":66633,"wgArticleId":1635,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Mathematics"],"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgRelevantPageName":"Applications_and_libraries/Mathematics","wgRelevantArticleId":1635,"wgIsProbablyEditable":!1,"wgRelevantPageIsProbablyEditable":!1,"wgRestrictionEdit":[],
+"wgRestrictionMove":[],"wgCollapsibleVectorEnabledModules":{"collapsiblenav":!0,"experiments":!0}};RLSTATE={"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","ext.pygments":"ready","ext.math.styles":"ready","ext.math.desktop.styles":"ready","skins.vector.styles.legacy":"ready","mediawiki.toc.styles":"ready"};RLPAGEMODULES=["ext.math.scripts","site","mediawiki.page.startup","mediawiki.page.ready","mediawiki.toc","skins.vector.legacy.js","ext.collapsiblevector.collapsibleNav"];</script>
+<script>(RLQ=window.RLQ||[]).push(function(){mw.loader.implement("user.options@1hzgi",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});});</script>
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=ext.math.desktop.styles%7Cext.math.styles%7Cext.pygments%7Cmediawiki.toc.styles%7Cskins.vector.styles.legacy&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/load.php?lang=en&amp;modules=startup&amp;only=scripts&amp;raw=1&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.35.5"/>
+<link rel="shortcut icon" href="/wikistatic/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="HaskellWiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.haskell.org/api.php?action=rsd"/>
+<link rel="license" href="/HaskellWiki:Copyrights"/>
+<link rel="alternate" type="application/atom+xml" title="HaskellWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 9]><script src="/resources/lib/html5shiv/html5shiv.js"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-Applications_and_libraries_Mathematics rootpage-Applications_and_libraries skin-vector action-view skin-vector-legacy">
+<div id="mw-page-base" class="noprint"></div>
+<div id="mw-head-base" class="noprint"></div>
+<div id="content" class="mw-body" role="main">
+	<a id="top"></a>
+	<div id="siteNotice" class="mw-body-content"></div>
+	<div class="mw-indicators mw-body-content">
+	</div>
+	<h1 id="firstHeading" class="firstHeading" lang="en">Applications and libraries/Mathematics</h1>
+	<div id="bodyContent" class="mw-body-content">
+		<div id="siteSub" class="noprint">From HaskellWiki</div>
+		<div id="contentSub"><span class="subpages">&lt; <a href="/Applications_and_libraries" title="Applications and libraries">Applications and libraries</a></span></div>
+		<div id="contentSub2"></div>
+		
+		<div id="jump-to-nav"></div>
+		<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+		<a class="mw-jump-link" href="#searchInput">Jump to search</a>
+		<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div id="toc" class="toc" role="navigation" aria-labelledby="mw-toc-heading"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2 id="mw-toc-heading">Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Applications"><span class="tocnumber">1</span> <span class="toctext">Applications</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Physics"><span class="tocnumber">1.1</span> <span class="toctext">Physics</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="#Libraries"><span class="tocnumber">2</span> <span class="toctext">Libraries</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="#Linear_algebra"><span class="tocnumber">2.1</span> <span class="toctext">Linear algebra</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="#Physical_units"><span class="tocnumber">3.1</span> <span class="toctext">Physical units</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Number_representations"><span class="tocnumber">3.2</span> <span class="toctext">Number representations</span></a>
+<ul>
+<li class="toclevel-3 tocsection-8"><a href="#Decimal_numbers"><span class="tocnumber">3.2.1</span> <span class="toctext">Decimal numbers</span></a></li>
+<li class="toclevel-3 tocsection-9"><a href="#Real_and_rational_numbers"><span class="tocnumber">3.2.2</span> <span class="toctext">Real and rational numbers</span></a>
+<ul>
+<li class="toclevel-4 tocsection-10"><a href="#Arbitrary_precision"><span class="tocnumber">3.2.2.1</span> <span class="toctext">Arbitrary precision</span></a></li>
+<li class="toclevel-4 tocsection-11"><a href="#Dynamic_precision"><span class="tocnumber">3.2.2.2</span> <span class="toctext">Dynamic precision</span></a></li>
+<li class="toclevel-4 tocsection-12"><a href="#Dynamic_precision_by_lazy_evaluation"><span class="tocnumber">3.2.2.3</span> <span class="toctext">Dynamic precision by lazy evaluation</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-13"><a href="#Type_class_hierarchies"><span class="tocnumber">3.3</span> <span class="toctext">Type class hierarchies</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Discrete_mathematics"><span class="tocnumber">3.4</span> <span class="toctext">Discrete mathematics</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Computer_Algebra"><span class="tocnumber">3.5</span> <span class="toctext">Computer Algebra</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Statistics"><span class="tocnumber">3.6</span> <span class="toctext">Statistics</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Plotting"><span class="tocnumber">3.7</span> <span class="toctext">Plotting</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="#Numerical_optimization"><span class="tocnumber">3.8</span> <span class="toctext">Numerical optimization</span></a>
+<ul>
+<li class="toclevel-3 tocsection-19"><a href="#bindings"><span class="tocnumber">3.8.1</span> <span class="toctext">bindings</span></a></li>
+<li class="toclevel-3 tocsection-20"><a href="#pure_haskell"><span class="tocnumber">3.8.2</span> <span class="toctext">pure haskell</span></a></li>
+</ul>
+</li>
+<li class="toclevel-2 tocsection-21"><a href="#Miscellaneous_libraries"><span class="tocnumber">3.9</span> <span class="toctext">Miscellaneous libraries</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Applications">Applications</span></h2>
+<h3><span class="mw-headline" id="Physics">Physics</span></h3>
+<dl><dt><a rel="nofollow" class="external text" href="http://ab-initio.mit.edu/meep/">Meep</a></dt>
+<dd>Meep (or MEEP) is a free finite-difference time-domain (FDTD) simulation software package developed at MIT to model electromagnetic systems. Meep used Haskell to generate C++ code, after Meep <a rel="nofollow" class="external text" href="http://ab-initio.mit.edu/wiki/index.php/Meep_release_notes">1.0</a> Haskell generation droped in favor of handwritten C++ code.</dd></dl>
+<dl><dt><a href="/Numeric_Quest" title="Numeric Quest">Numeric Quest</a></dt>
+<dd>Jan Skibinski's <a href="/Numeric_Quest" title="Numeric Quest">Numeric Quest</a> library provides modules that are useful for  Quantum Mechanics, among other things.</dd></dl>
+<h2><span class="mw-headline" id="Libraries">Libraries</span></h2>
+<h3><span class="mw-headline" id="Linear_algebra">Linear algebra</span></h3>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/bed-and-breakfast">bed-and-breakfast</a></dt>
+<dd>A library that implements Matrix operations in pure Haskell using mutable arrays and the ST Monad. bed-and-breakfast does not need any additional software to be installed and can perform basic matrix operations like multiplication, finding the inverse, and calculating determinants efficiently.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="https://github.com/patperry/hs-linear-algebra">hs-linear-algebra</a></dt>
+<dd>Patrick Perry's linear algebra library, built on BLAS. <a rel="nofollow" class="external text" href="https://github.com/cartazio/hs-cblas">hs-cblas</a> seems to be a more up-to-date fork.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://www.cs.utah.edu/~hal/HBlas/index.html">Wrapper to CLAPACK</a></dt></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/comfort-array">comfort-array</a></dt>
+<dd>A collection of packages based on arrays with distinct shape and index types.
+<ul><li><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/lapack">lapack</a> - Fast numeric matrix operations based on LAPACK</li>
+<li><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/comfort-blas">comfort-blas</a> - Fast numeric vector processing based on BLAS</li>
+<li><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/comfort-glpk">comfort-glpk</a> - Fast linear programming based on GLPK</li>
+<li><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/coinor-clp">coinor-clp</a> - Fast linear programming based on COIN-OR/CLP</li>
+<li><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/highs-lp">highs-lp</a> - Fast linear programming based on HiGHS/LP</li>
+<li><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/comfort-fftw">comfort-fftw</a> - Fast Discrete Fourier Transform based on FFTW</li></ul></dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://haskelldsp.sourceforge.net/">Digital Signal Processing</a> with <a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/dsp">dsp</a></dt>
+<dd>Modules for matrix manipulation, Fourier transform, interpolation, spectral estimation, and frequency estimation.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="https://ofb.net/~frederik/vectro/">Index-aware linear algebra</a> (<a rel="nofollow" class="external text" href="http://archive.fo/bfres">original announcment</a>)</dt>
+<dd>Frederik Eaton's library for statically checked matrix manipulation in Haskell</dd></dl>
+<dl><dt><a href="/Numeric_Quest" title="Numeric Quest">Numeric Quest</a></dt>
+<dd>Jan Skibinski's <a href="/Numeric_Quest" title="Numeric Quest">Numeric Quest</a> library provides several modules that are useful for linear algebra in general, among other things.</dd></dl>
+<dl><dt><a href="/Vector-space" title="Vector-space">vector-space</a></dt>
+<dd>The <a href="/Vector-space" title="Vector-space">vector-space</a> package defines classes and generic operations for vector spaces and affine spaces.  It also defines a type of infinite towers of generalized derivatives (linear transformations).</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/hmatrix">HMatrix</a></dt>
+<dd>By Alberto Ruiz. From the project <a rel="nofollow" class="external text" href="http://perception.inf.um.es/hmatrix/">website</a>:
+<dl><dd><i>A purely functional interface to linear algebra and other numerical algorithms, internally implemented using LAPACK, BLAS, and GSL.</i></dd></dl></dd></dl>
+<dl><dd><dl><dd><i>This package includes standard matrix decompositions (eigensystems, singular values, Cholesky, QR, etc.), linear systems, numeric integration, root finding, etc.</i></dd></dl></dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/Vec">Vec</a></dt>
+<dd>By Scott E. Dillard. Static dimension checking:
+<dl><dd><i>Vectors are represented by lists with type-encoded lengths. The constructor is&#160;:., which acts like a cons both at the value and type levels, with () taking the place of nil. So x:.y:.z:.() is a 3d vector. The library provides a set of common list-like functions (map, fold, etc) for working with vectors. Built up from these functions are a small but useful set of linear algebra operations: matrix multiplication, determinants, solving linear systems, inverting matrices.</i></dd></dl></dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="https://github.com/martinra/hlinear">HLinear</a></dt>
+<dd>By Alexandru Ghitza, Martin Westerholt-Raum. PDE decomposition of matrices over division rings. See <a rel="nofollow" class="external text" href="https://arxiv.org/abs/1605.02532">HLinear: Exact Dense Linear Algebra in Haskell</a>.
+<dl><dd><i>HLinear is a Haskell implementation of the PLE decomposition of matrices over division rings. It writes an arbitrary matrix as a product of a permutation matrix, a lower unitriangular matrix, and an echelon matrix.</i></dd></dl></dd></dl>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li><a href="/Linear_algebra" title="Linear algebra">Linear algebra</a></li>
+<li><a href="/Mathematical_prelude_discussion" title="Mathematical prelude discussion">Mathematical prelude discussion</a></li></ul>
+<p><br />
+See also: <a href="/Linear_algebra" title="Linear algebra">Design discussions</a>
+</p>
+<h3><span class="mw-headline" id="Physical_units"><a href="/Physical_units" title="Physical units">Physical units</a></span></h3>
+<dl><dt><a href="/Dimensionalized_numbers" class="mw-redirect" title="Dimensionalized numbers">Dimensionalized numbers</a></dt>
+<dd>Working with physical units like second, meter and so on in a type-safe manner.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://darcs.haskell.org/numericprelude/src/Number/SI.hs">NumericPrelude: Physical units</a></dt>
+<dd>Numeric values with dynamically checked units.</dd></dl>
+<dl><dt><a href="/CalDims" class="mw-redirect" title="CalDims">CalDims</a></dt>
+<dd>This is not simply a library providing a new type of <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="kt">Num</span></code> class, but stand-alone calculation tool that supports user defined functions and units (basic and derived), so it can provide dimension-safe calculation (not embedded but via shell). Calculations can be modified/saved via shell. It uses rational numbers to avoid rounding errors where possible.</hask></dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="https://github.com/bjornbm/dimensional">Dimensional</a></dt>
+<dd>Library providing data types for performing arithmetic with physical quantities and units. Information about the physical dimensions of the quantities/units is embedded in their types and the validity of operations is verified by the type checker at compile time. The boxing and unboxing of numerical values as quantities is done by multiplication and division of units.</dd></dl>
+<h3><span class="mw-headline" id="Number_representations">Number representations</span></h3>
+<h4><span class="mw-headline" id="Decimal_numbers">Decimal numbers</span></h4>
+<dl><dt><a rel="nofollow" class="external text" href="http://src.seereason.com/decimal/">Decimal arithmetic library</a></dt>
+<dd>An implementation of real decimal arithmetic, for cases where the binary floating point is not acceptable (for example, money).</dd></dl>
+<h4><span class="mw-headline" id="Real_and_rational_numbers">Real and rational numbers</span></h4>
+<p>There are several levels of <a href="/Exact_real_arithmetic" title="Exact real arithmetic">handling real numbers</a> and according libraries.
+</p>
+<h5><span class="mw-headline" id="Arbitrary_precision">Arbitrary precision</span></h5>
+<ul><li>Numbers have fixed precision</li>
+<li>Rounding errors accumulate</li>
+<li>Sharing is easy, i.e. in <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="nf">sqrt</span> <span class="n">pi</span> <span class="o">+</span> <span class="n">sin</span> <span class="n">pi</span></code>, <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="nf">pi</span></code> is computed only once</hask></hask></li>
+<li>Fast, because the routines can make use of the fast implementation of <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="kt">Integer</span></code> operations</hask></li></ul>
+<dl><dt><a href="/Numeric_Quest" title="Numeric Quest">Numeric Quest</a></dt>
+<dd>Jan Skibinski's <a href="/Numeric_Quest" title="Numeric Quest">Numeric Quest</a> library provides, among other things, a type for arbitrary precision rational numbers with transcendental functions.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://cvs.haskell.org/darcs/numericprelude/src/Number/FixedPoint.hs">FixedPoint.hs</a></dt>
+<dd>part of NumericPrelude project</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/AERN-Basics">AERN-Basics</a> <a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/AERN-Real">AERN-Real</a> <a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/AERN-Real-Interval">AERN-Real-Interval</a> <a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/AERN-Real-Double">AERN-Real-Double</a></dt>
+<dd>contains type classes that form a foundation for <i>rounded arithmetic</i> and <i>interval arithmetic</i> with explicit control of rounding and the possibility to increase the rounding precision arbitrarily for types that support it. At the moment there are instances for Double floating point numbers where one can control the direction of rounding but cannot increase the rounding precision. In the near future instances for MPFR arbitrary precision numbers will be provided. Intervals can use as endpoints any type that supports directed rounding in the numerical order (such as Double or MPFR) and operations on intervals are rounded either outwards or inwards.  Outwards rounding allows to safely approximate exact real arithmetic while a combination of both outwards and inwards rounding allows one to safely approximate exact interval arithmetic. Inverted intervals with Kaucher arithmetic are also supported.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/AERN-RnToRm">AERN-RnToRm</a></dt>
+<dd>contains arithmetic of <i>piecewise polynomial function intervals</i> that approximate multi-dimensional (almost everywhere) continuous real functions to arbitrary precision</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/hmpfr">hmpfr</a></dt>
+<dd>hmpfr is a purely functional haskell interface to the <a rel="nofollow" class="external text" href="http://www.mpfr.org/">MPFR</a> library</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/numbers">numbers</a></dt>
+<dd>provides an up-to-date, easy-to-use BigFloat implementation that builds with a modern GHC, among other things.</dd></dl>
+<h5><span class="mw-headline" id="Dynamic_precision">Dynamic precision</span></h5>
+<ul><li>You tell the precision and an expression shall be computed to, and the computer finds out, how precisely to compute the input values</li>
+<li>Rounding errors do not accumulate</li>
+<li>Sharing of temporary results is difficult, that is, in <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="nf">sqrt</span> <span class="n">pi</span> <span class="o">+</span> <span class="n">sin</span> <span class="n">pi</span></code>, <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="nf">pi</span></code> <i>will</i> be computed twice, each time with the required precision.</hask></hask></li>
+<li>Almost as fast as arbitrary precision computation</li></ul>
+<dl><dt><a rel="nofollow" class="external text" href="http://www.cs.man.ac.uk/arch/dlester/exact.html">ERA</a> is an implementation (in Haskell 1.2) by David Lester.</dt>
+<dd>It is quite fast, possibly the fastest Haskell implementation.  At 220 lines it is also the shortest.  Probably the shortest implementation of exact real arithmetic in any language.</dd>
+<dd>The provided number type <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="kt">CReal</span></code> is instance of the Haskell 98 numeric type classes and thus can be used whereever you used Float or Double before and encountered some numerical difficulties.</hask></dd>
+<dd>Here is a mirror: <a rel="nofollow" class="external free" href="http://darcs.augustsson.net/Darcs/CReal/">http://darcs.augustsson.net/Darcs/CReal/</a></dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://www.doc.ic.ac.uk/~ae/exact-computation/#bm:implementations">IC-Reals</a> is an implementation by Abbas Edalat, Marko Krznar&#263; and Peter J. Potts.</dt>
+<dd>This implementation uses linear fractional transformations.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://r6.ca/">Few Digits</a> by Russell O'Connor.</dt>
+<dd>This is a prototype of the implementation he intendeds to write in <a rel="nofollow" class="external text" href="http://coq.inria.fr/">Coq</a>.  Once the Coq implementation is complete, the Haskell code could be extracted producing an implementation that would be proved correct.</dd></dl>
+<dl><dt>COMP is an implementation by Yann Kieffer.</dt>
+<dd>The work is in beta and relies on new primitive operations on Integers which will be implemented in GHC. The library isn't available yet.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://www2.arnes.si/~abizja4/hera/">Hera</a> is an implementation by Aleš Bizjak.</dt>
+<dd>It uses the <a rel="nofollow" class="external text" href="http://www.mpfr.org/">MPFR</a> library to implement dyadic rationals, on top of which are implemented intervals and real numbers. A real number is represented as a function <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="kt">Int</span> <span class="ow">-&gt;</span> <span class="kt">Interval</span></code> which represents a sequence of intervals converging to the real.</hask></dd></dl>
+<h5><span class="mw-headline" id="Dynamic_precision_by_lazy_evaluation">Dynamic precision by lazy evaluation</span></h5>
+<p>The real numbers are represented by an infinite datastructure, which allows you to increase precision successively by evaluating the data structure successively. All of the implementations below use some kind of digit stream as number representation.
+Sharing of results is simple.
+The implementations are either fast on simple expressions, because they use large blocks/bases, or they are fast on complex expressions, because they consume as little as possible input digits in order to emit the required output digits.
+</p>
+<dl><dt><a rel="nofollow" class="external text" href="http://medialab.freaknet.org/bignum/">BigFloat</a> is an implementation by Martin Guy.</dt>
+<dd>It works with streams of decimal digits (strictly in the range from 0 to 9) and a separate sign. The produced digits are always correct. Output is postponed until the code is certain what the next digit is. This sometimes means that <a rel="nofollow" class="external text" href="http://medialab.freaknet.org/bignum/dudeney.html">no more data is output</a>.</dd></dl>
+<dl><dt>In <a rel="nofollow" class="external text" href="http://users.info.unicaen.fr/~karczma/arpap/lazypi.ps.gz">"The Most Unreliable Technique in the World to compute pi"</a> Jerzy Karczmarczuk develops some functions for computing pi lazily.</dt></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://darcs.haskell.org/numericprelude/src/Number/Positional.hs">NumericPrelude: positional numbers</a></dt>
+<dd>Represents a real number as pair <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="p">(</span><span class="n">exponent</span><span class="p">,[</span><span class="n">digit</span><span class="p">])</span></code>, where the digits are <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="kt">Int</span></code>s in the open range <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="p">(</span><span class="o">-</span><span class="n">basis</span><span class="p">,</span><span class="n">basis</span><span class="p">)</span></code>. There is no need for an extra sign item in the number data structure. The <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="nf">basis</span></code> can range from <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="mi">10</span></code> to <hask><code class="mw-highlight mw-highlight-lang-haskell" dir="ltr"><span class="mi">1000</span></code>. (Binary representations can be derived from the hexadecimal representation.) Showing the numbers in traditional format (non-negative digits) fails for fractions ending with a run of zeros. However the internal representation with negative digits can always be shown and is probably more useful for further processing. An interface for the numeric type hierarchy of the NumericPrelude project is provided.</hask></hask></hask></hask></hask></hask></dd>
+<dd>It features
+<ul><li>basis conversion</li>
+<li>basic arithmetic: addition, subtraction, multiplication, division</li>
+<li>algebraic arithmetic: square root, other roots (no general polynomial roots)</li>
+<li>transcendental arithmetic: pi, exponential, logarithm, trigonometric and inverse trigonometric functions</li></ul></dd></dl>
+<h3><span class="mw-headline" id="Type_class_hierarchies">Type class hierarchies</span></h3>
+<p>There are several approaches to improve the <a href="/Mathematical_prelude_discussion" title="Mathematical prelude discussion">numeric type class hierarchy</a>.
+</p>
+<dl><dt>Dylan Thurston and Henning Thielemann's <a href="/Numeric_Prelude" title="Numeric Prelude">Numeric Prelude</a></dt>
+<dd>Experimental revised framework for numeric type classes. Needs hiding of Prelude, overriding hidden functions like fromInteger and multi-parameter type classes. Probably restricted to GHC.</dd></dl>
+<dl><dt>Jerzy Karczmarczuk's <a rel="nofollow" class="external text" href="http://www.haskell.org/pipermail/haskell-cafe/2001-February/001510.html">approach</a></dt></dl>
+<dl><dt>Serge D. Mechveliani's <a rel="nofollow" class="external text" href="ftp://ftp.botik.ru/pub/local/Mechveliani/basAlgPropos/">Basic Algebra proposal</a></dt></dl>
+<dl><dt>Andrew Frank's <a rel="nofollow" class="external text" href="http://www.haskell.org/pipermail/haskell-cafe/2006-April/015326.html">approach</a></dt>
+<dd>The proposal: <a rel="nofollow" class="external free" href="ftp://ftp.geoinfo.tuwien.ac.at/frank/numbersPrelude_v1.pdf">ftp://ftp.geoinfo.tuwien.ac.at/frank/numbersPrelude_v1.pdf</a></dd></dl>
+<dl><dt>Haskell Prime</dt>
+<dd><a rel="nofollow" class="external text" href="http://prime.haskell.org/ticket/112">Ongoing efforts for the language revision</a></dd></dl>
+<h3><span class="mw-headline" id="Discrete_mathematics">Discrete mathematics</span></h3>
+<dl><dt><a rel="nofollow" class="external text" href="http://andrew.bromage.org/darcs/numbertheory/">Number Theory Library</a></dt>
+<dd>Andrew Bromage's Haskell number theory library, providing operations on primes, fibonacci sequences and combinatorics.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://users.skynet.be/jyp/HGAL/">HGAL</a></dt>
+<dd>An haskell implementation of Brendan McKay's algorithm for graph canonic labeling and automorphism group. (aka Nauty)</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://www.cambridge.org/uk/catalogue/catalogue.asp?isbn=0521849306">Computational Oriented Matroids</a></dt>
+<dd>is a book by <a rel="nofollow" class="external text" href="http://wwwopt.mathematik.tu-darmstadt.de/~bokowski/">Jürgen G. Bokowski</a>, where he develops Haskell code for Matroid computations.</dd></dl>
+<p>See also <a href="/Libraries_and_tools/Cryptography" class="mw-redirect" title="Libraries and tools/Cryptography">Libraries and tools/Cryptography</a>
+</p>
+<h3><span class="mw-headline" id="Computer_Algebra">Computer Algebra</span></h3>
+<dl><dt><a rel="nofollow" class="external text" href="http://homepages.inf.ed.ac.uk/wadler/realworld/docon2.html">DoCon</a>, the Algebraic Domain Constructor</dt>
+<dd>A library by Sergey D. Mechveliani for Algebra, turns GHCi into a kind of Computer Algebra System</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://www.info.unicaen.fr/~karczma/arpap/">Papers by Jerzy Karczmarczuk</a></dt>
+<dd>Some interesting uses of Haskell in mathematics, including <a href="/Functional_differentiation" title="Functional differentiation">functional differentiation</a>, power series, continued fractions.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://www.robtougher.com/HCAS/">HCAS</a> by Rob Tougher.</dt></dl>
+<h3><span class="mw-headline" id="Statistics">Statistics</span></h3>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/hstats">hstats</a></dt>
+<dd>Statistical Computing with Haskell</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/hmatrix-gsl-stats">hmatrix-gsl-stats</a></dt>
+<dd>A binding to the statistics portion of GSL.  Works with hmatrix</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/hstatistics">hstatistics</a></dt>
+<dd>A library for doing statistics.  Works with hmatrix</dd></dl>
+<h3><span class="mw-headline" id="Plotting">Plotting</span></h3>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/easyplot">easyplot</a></dt>
+<dd>Simple and easy wrapper to gnuplot.</dd></dl>
+<dl><dt><a href="/Gnuplot" title="Gnuplot">Gnuplot</a></dt>
+<dd>Simple wrapper to gnuplot</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/packages/archive/hmatrix/latest/doc/html/Graphics-Plot.html">hmatrix</a></dt>
+<dd>contains a deprecated gnuplot wrapper</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/Chart">Chart</a></dt>
+<dd>A library for generating 2D Charts and Plots, based upon the cairo graphics library.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/plot">plot</a></dt>
+<dd>A library for generating figures, based upon the cairo graphics libary with</dd></dl>
+<p>a simple, monadic interface.
+</p>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/cgi-bin/hackage-scripts/package/probability">probability</a></dt>
+<dd>the module Numeric.Probability.Visualize contains a wrapper to <a rel="nofollow" class="external text" href="http://www.r-project.org/">R</a></dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="https://github.com/abarbu/matplotlib-haskell">matplotlib-haskell</a></dt>
+<dd>Haskell bindings for Python's Matplotlib</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="https://github.com/ocramz/bokeh-hs">bokeh-hs</a></dt>
+<dd>Haskell bindings for Bokeh</dd></dl>
+<h3><span class="mw-headline" id="Numerical_optimization">Numerical optimization</span></h3>
+<p>This classification is somewhat arbitrary. Something more systematic like GAMS might be helpful.
+</p>
+<h4><span class="mw-headline" id="bindings">bindings</span></h4>
+<dl><dt><a rel="nofollow" class="external text" href="http://repetae.net/john/recent/out/HsASA.html">Adaptive Simulated Annealing</a></dt>
+<dd>A Haskell interface to Lester Ingber's adaptive simulating annealing code.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/cmaes">CMA-ES</a></dt>
+<dd>A wrapper for Covariance Matrix Adaptation Evolution Strategy</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="https://github.com/ghorn/nlopt-haskell">nlopt-haskell</a></dt>
+<dd>A low-level binding to the nlopt library</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/ipopt-hs">ipopt-hs</a></dt>
+<dd>A haskell binding to ipopt including automatic differentiation</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/glpk-hs">glpk-hs</a></dt>
+<dd>A high-level interface to GLPK's linear programming and mixed integer programming features.</dd></dl>
+<h4><span class="mw-headline" id="pure_haskell">pure haskell</span></h4>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/nonlinear-optimization">nonlinear-optimization</a></dt>
+<dd>A pure-haskell CG_DESCENT method is implemented</dd></dl>
+<h3><span class="mw-headline" id="Miscellaneous_libraries">Miscellaneous libraries</span></h3>
+<dl><dt><a rel="nofollow" class="external text" href="http://www.robtougher.com/HaskellMath/">HaskellMath</a></dt>
+<dd>The HaskellMath library is a sandbox for experimenting with mathematics algorithms. So far I've implemented a few quantitative finance models (Black Scholes, Binomial Trees, etc) and basic linear algebra functions. Next I might work on either computer algebra or linear programming. All comments welcome!</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://hackage.haskell.org/package/HaskellForMaths">HaskellForMaths</a></dt>
+<dd>David Amos' library for combinatorics, group theory, commutative algebra and non-commutative algebra, which is described in an <a rel="nofollow" class="external text" href="http://haskellformaths.blogspot.com/">accompanying blog</a>.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://darcs.haskell.org/htam/">Various math stuff by Henning Thielemann</a></dt>
+<dd>This is some unsorted mathematical stuff including: gnuplot wrapper (now maintained as separate package), portable grey map (PGM) image reader and writer, simplest numerical integration, differentiation, zero finding, interpolation, solution of differential equations, combinatorics, some solutions of math riddles, computation of fractal dimensions of iterated function systems (IFS)</dd></dl>
+<dl><dt><a href="/Numeric_Quest" title="Numeric Quest">Numeric Quest</a></dt>
+<dd>Jan Skibinski wrote a collection of Haskell modules that are useful for Mathematics in general, and Quantum Mechanics in particular.</dd></dl>
+<dl><dd>Some of the modules are hosted on <a rel="nofollow" class="external text" href="http://darcs.haskell.org/numeric-quest/">haskell.org</a>. They include modules for:
+<ul><li>Rational numbers with transcendental functions</li>
+<li>Roots of polynomials</li>
+<li>Eigensystems</li>
+<li>Tensors</li>
+<li>Dirac quantum mechanics</li></ul></dd></dl>
+<dl><dd>Other modules in Numeric Quest are currently only available via the <a rel="nofollow" class="external text" href="http://web.archive.org/web/20010605003250/http://www.numeric-quest.com/haskell/">Internet Archive</a>. They include, among many other things:
+<ul><li><a rel="nofollow" class="external text" href="http://web.archive.org/web/*/http://www.numeric-quest.com/haskell/">State vector evolution</a></li>
+<li><a rel="nofollow" class="external text" href="http://web.archive.org/web/*/http://www.numeric-quest.com/haskell/">Short study of fuzzy oscillator</a></li></ul></dd></dl>
+<dl><dd>See the <a href="/Numeric_Quest" title="Numeric Quest">Numeric Quest</a> page for more information.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://www.dinkla.net/fp/cglib.html">Geometric Algorithms</a></dt>
+<dd>A small Haskell library, containing algorithms for two-dimensional convex hulls, triangulations of polygons, Voronoi-diagrams and Delaunay-triangulations, the QEDS data structure, kd-trees and range-trees.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://home.solcon.nl/mklooster/repos/hmm/">Hmm: Haskell Metamath</a></dt>
+<dd>Hmm is a small Haskell library to parse and verify Metamath databases.</dd></dl>
+<dl><dt><a href="/Probabilistic_Functional_Programming" title="Probabilistic Functional Programming">Probabilistic Functional Programming</a></dt>
+<dd>The PFP library is a collection of modules for Haskell that facilitates probabilistic functional programming, that is,  programming with stochastic values. The probabilistic functional  programming approach is based on a data type for representing  distributions. A distribution represent the outcome of a  probabilistic event as a collection of all possible values, tagged  with their likelihood. A nice aspect of this system is that  simulations can be specified independently from their method of  execution. That is, we can either fully simulate or randomize any  simulation without altering the code which defines it.</dd></dl>
+<dl><dt><a href="/Sinc_function" title="Sinc function">Sinc function</a></dt></dl>
+<dl><dt><a href="/Gamma_and_Beta_function" title="Gamma and Beta function">Gamma and Beta function</a></dt></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://repetae.net/john/recent/out/Boolean.html">Boolean</a></dt>
+<dd>A general boolean algebra class and some instances for Haskell.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://darcs.haskell.org/~lemmih/hode/">HODE</a></dt>
+<dd>HODE is a binding to the Open Dynamics Engine. ODE is an open source, high performance library for simulating rigid body dynamics.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://sourceforge.net/projects/ranged-sets">Ranged Sets</a></dt>
+<dd>A ranged set is a list of non-overlapping ranges. The ranges have upper and lower boundaries, and a boundary divides the base type into values above and below. No value can ever sit on a boundary. So you can have the set <span><span class="mwe-math-mathml-inline mwe-math-mathml-a11y" style="display: none;"><math xmlns="http://www.w3.org/1998/Math/MathML"  alttext="{\displaystyle (2.0,3.0]\cup (5.3,6)}">
+  <semantics>
+    <mrow class="MJX-TeXAtom-ORD">
+      <mstyle displaystyle="true" scriptlevel="0">
+        <mo stretchy="false">(</mo>
+        <mn>2.0</mn>
+        <mo>,</mo>
+        <mn>3.0</mn>
+        <mo stretchy="false">]</mo>
+        <mo>&#x222A;<!-- ∪ --></mo>
+        <mo stretchy="false">(</mo>
+        <mn>5.3</mn>
+        <mo>,</mo>
+        <mn>6</mn>
+        <mo stretchy="false">)</mo>
+      </mstyle>
+    </mrow>
+    <annotation encoding="application/x-tex">{\displaystyle (2.0,3.0]\cup (5.3,6)}</annotation>
+  </semantics>
+</math></span><meta class="mwe-math-fallback-image-inline" aria-hidden="true" style="background-image: url(&#039;https://wikimedia.org/api/rest_v1/media/math/render/svg/8698dce044f838286f20d8e30a4fbdc688315d84&#039;); background-repeat: no-repeat; background-size: 100% 100%; vertical-align: -0.838ex; width:18.089ex; height:2.843ex;" /></span>.</dd></dl>
+<dl><dt><a rel="nofollow" class="external text" href="http://code.google.com/p/hhydra/">hhydra</a></dt>
+<dd>Hhydra is a tool to compute Goodstein successions and hydra puzzles described by Bernard Hodgson in his article 'Herculean or Sisyphean tasks?' published in No 51 March 2004 of the Newsletter of the European Mathematical Society.</dd></dl>
+<p><i>This page contains a list of libraries and tools in a certain category. For a comprehensive list of such pages, see <a href="/Applications_and_libraries" title="Applications and libraries">Applications and libraries</a>.</i>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20240508213843
+Cache expiry: 86400
+Dynamic content: false
+Complications: []
+CPU time usage: 0.023 seconds
+Real time usage: 0.093 seconds
+Preprocessor visited node count: 280/1000000
+Post‐expand include size: 607/2097152 bytes
+Template argument size: 152/2097152 bytes
+Highest expansion depth: 3/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 1/20
+Unstrip post‐expand size: 2618/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    4.474      1 -total
+ 22.55%    1.009      8 Template:HackagePackage
+ 11.98%    0.536      1 Template:LibrariesPage
+-->
+
+<!-- Saved in parser cache with key wikidb_haskell:pcache:idhash:1635-0!canonical!math=5 and timestamp 20240508213843 and revision id 66633
+ -->
+</div></div><div class="printfooter">Retrieved from "<a dir="ltr" href="https://wiki.haskell.org/index.php?title=Applications_and_libraries/Mathematics&amp;oldid=66633">https://wiki.haskell.org/index.php?title=Applications_and_libraries/Mathematics&amp;oldid=66633</a>"</div>
+		<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/Category:Mathematics" title="Category:Mathematics">Mathematics</a></li></ul></div></div>
+	</div>
+</div>
+
+<div id="mw-navigation">
+	<h2>Navigation menu</h2>
+	<div id="mw-head">
+		<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-personal" class="vector-menu" aria-labelledby="p-personal-label" role="navigation" 
+	 >
+	<h3 id="p-personal-label">
+		<span>Personal tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=Applications+and+libraries%2FMathematics" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li></ul>
+		
+	</div>
+</nav>
+
+
+		<div id="left-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-namespaces" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-namespaces-label" role="navigation" 
+	 >
+	<h3 id="p-namespaces-label">
+		<span>Namespaces</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-nstab-main" class="selected"><a href="/Applications_and_libraries/Mathematics" title="View the content page [c]" accesskey="c">Page</a></li><li id="ca-talk" class="new"><a href="/index.php?title=Talk:Applications_and_libraries/Mathematics&amp;action=edit&amp;redlink=1" rel="discussion" title="Discussion about the content page (page does not exist) [t]" accesskey="t">Discussion</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-variants" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-variants-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+	<h3 id="p-variants-label">
+		<span>Variants</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+		</div>
+		<div id="right-navigation">
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-views" class="vector-menu vector-menu-tabs vectorTabs" aria-labelledby="p-views-label" role="navigation" 
+	 >
+	<h3 id="p-views-label">
+		<span>Views</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="ca-view" class="collapsible selected"><a href="/Applications_and_libraries/Mathematics">Read</a></li><li id="ca-viewsource" class="collapsible"><a href="/index.php?title=Applications_and_libraries/Mathematics&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></li><li id="ca-history" class="collapsible"><a href="/index.php?title=Applications_and_libraries/Mathematics&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></li></ul>
+		
+	</div>
+</nav>
+
+
+			<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-cactions" class="vector-menu-empty emptyPortlet vector-menu vector-menu-dropdown vectorMenu" aria-labelledby="p-cactions-label" role="navigation" 
+	 >
+	<input type="checkbox" class="vector-menu-checkbox vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+	<h3 id="p-cactions-label">
+		<span>More</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="menu vector-menu-content-list"></ul>
+		
+	</div>
+</nav>
+
+
+			<div id="p-search" role="search">
+	<h3 >
+		<label for="searchInput">Search</label>
+	</h3>
+	<form action="/index.php" id="searchform">
+		<div id="simpleSearch">
+			<input type="search" name="search" placeholder="Search HaskellWiki" title="Search HaskellWiki [f]" accesskey="f" id="searchInput"/>
+			<input type="hidden" name="title" value="Special:Search">
+			<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/>
+			<input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>
+		</div>
+	</form>
+</div>
+
+		</div>
+	</div>
+	
+<div id="mw-panel">
+	<div id="p-logo" role="banner">
+		<a  title="Visit the main page" class="mw-wiki-logo" href="/Haskell"></a>
+	</div>
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-navigation" class="vector-menu vector-menu-portal portal portal-first" aria-labelledby="p-navigation-label" role="navigation" 
+	 >
+	<h3 id="p-navigation-label">
+		<span>Navigation</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="n-mainpage"><a href="/Haskell" title="Visit the main page [z]" accesskey="z">Haskell</a></li><li id="n-portal"><a href="/HaskellWiki:Community" title="About the project, what you can do, where to find things">Wiki community</a></li><li id="n-recentchanges"><a href="/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	<!-- Please do not use role attribute as CSS selector, it is deprecated. -->
+<nav id="p-tb" class="vector-menu vector-menu-portal portal" aria-labelledby="p-tb-label" role="navigation" 
+	 >
+	<h3 id="p-tb-label">
+		<span>Tools</span>
+	</h3>
+	<!-- Please do not use the .body class, it is deprecated. -->
+	<div class="body vector-menu-content">
+		<!-- Please do not use the .menu class, it is deprecated. -->
+		<ul class="vector-menu-content-list"><li id="t-whatlinkshere"><a href="/Special:WhatLinksHere/Applications_and_libraries/Mathematics" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/Special:RecentChangesLinked/Applications_and_libraries/Mathematics" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="javascript:print();" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/index.php?title=Applications_and_libraries/Mathematics&amp;oldid=66633" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/index.php?title=Applications_and_libraries/Mathematics&amp;action=info" title="More information about this page">Page information</a></li><li id="t-cite"><a href="/index.php?title=Special:CiteThisPage&amp;page=Applications_and_libraries%2FMathematics&amp;id=66633&amp;wpFormIdentifier=titleform" title="Information on how to cite this page">Cite this page</a></li></ul>
+		
+	</div>
+</nav>
+
+
+	
+</div>
+
+</div>
+
+<footer id="footer" class="mw-footer" role="contentinfo" >
+	<ul id="footer-info" >
+		<li id="footer-info-lastmod"> This page was last edited on 4 May 2024, at 09:43.</li>
+		<li id="footer-info-copyright">Recent content is available under <a href="/HaskellWiki:Copyrights" title="HaskellWiki:Copyrights">simple permissive license</a>.</li>
+	</ul>
+	<ul id="footer-places" >
+		<li id="footer-places-privacy"><a href="/HaskellWiki:Privacy_policy" title="HaskellWiki:Privacy policy">Privacy policy</a></li>
+		<li id="footer-places-about"><a href="/HaskellWiki:About" title="HaskellWiki:About">About HaskellWiki</a></li>
+		<li id="footer-places-disclaimer"><a href="/HaskellWiki:General_disclaimer" title="HaskellWiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+	<ul id="footer-icons" class="noprint">
+		<li id="footer-poweredbyico"><a href="https://www.mediawiki.org/"><img src="/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" loading="lazy"/></a></li>
+	</ul>
+	<div style="clear: both;"></div>
+</footer>
+
+
+
+<script>(RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.023","walltime":"0.093","ppvisitednodes":{"value":280,"limit":1000000},"postexpandincludesize":{"value":607,"limit":2097152},"templateargumentsize":{"value":152,"limit":2097152},"expansiondepth":{"value":3,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":1,"limit":20},"unstrip-size":{"value":2618,"limit":5000000},"timingprofile":["100.00%    4.474      1 -total"," 22.55%    1.009      8 Template:HackagePackage"," 11.98%    0.536      1 Template:LibrariesPage"]},"cachereport":{"timestamp":"20240508213843","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":17});});</script></body></html>
